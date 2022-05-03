@@ -7,15 +7,26 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct StartContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("Gamma Robotics")
+            .font(.largeTitle)
+            .padding()
+    }
+}
+
+struct FindNaoContentView : View {
+    var body: some View {
+        Text("Finde Nao")
             .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            StartContentView()
+            FindNaoContentView()
+        }
     }
 }

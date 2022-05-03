@@ -11,7 +11,8 @@ import SwiftUI
 struct NAO_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartContentView()
+            FindNaoContentView()
         }
     }
 }
