@@ -18,7 +18,9 @@ struct StartContentView: View {
 struct FindNaoContentView : View {
     var body: some View {
         Text("Finde Nao")
-            .padding()
+        Text("Test")
+            .padding()  
+    
     }
 }
 
