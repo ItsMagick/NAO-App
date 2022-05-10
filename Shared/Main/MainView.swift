@@ -9,24 +9,25 @@ import SwiftUI
 
 struct MainView: View {
     
-//dummy data
-  @State var disciplines = ["Motion", "Speech Text", "Recorder", ".", ".","."]
-
-  var body: some View {
-//list for mainView w/ dummy data in VStack
-      VStack{
-          //placeholder for camera
-          Rectangle()
-              .size(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)/3)
-              .padding()
-              
-
-          List(disciplines, id: \.self) { discipline in
-            Text(discipline)
-                  .font(.headline)
-          }
-      }
-  }
+    var body: some View {
+        
+        TabView {
+            MenuView()
+                .tabItem {
+                    Label("Menu", systemImage: "list.dash")
+                }
+            ApplicationView()
+                .tabItem {
+                    Label("Apps", systemImage: "app")
+                }
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
+        }
+        
+    }
+    
 }
 
 
@@ -35,3 +36,4 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
+

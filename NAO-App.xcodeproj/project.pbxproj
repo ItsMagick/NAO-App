@@ -15,8 +15,10 @@
 		660281152821237D00C91AAA /* NAO_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660280EC2821237A00C91AAA /* NAO_AppApp.swift */; };
 		660281182821237D00C91AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660280EE2821237D00C91AAA /* Assets.xcassets */; };
 		660281192821237D00C91AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660280EE2821237D00C91AAA /* Assets.xcassets */; };
+		843E96A2282A57A500919C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A1282A57A500919C19 /* SettingsView.swift */; };
+		843E96A4282A57B100919C19 /* ApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A3282A57B100919C19 /* ApplicationsView.swift */; };
+		843E96A7282A5C4900919C19 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A6282A5C4900919C19 /* MenuView.swift */; };
 		8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80428252B6F00D7C4FA /* FindNaoView.swift */; };
-		8496E80728252BD000D7C4FA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80628252BD000D7C4FA /* SettingsView.swift */; };
 		8496E80928252C5600D7C4FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80828252C5600D7C4FA /* MainView.swift */; };
 		8496E80B28252DEA00D7C4FA /* ApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80A28252DEA00D7C4FA /* ApplicationView.swift */; };
 		8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80D28252EB900D7C4FA /* MainDetailView.swift */; };
@@ -51,8 +53,10 @@
 		6602810C2821237D00C91AAA /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660281102821237D00C91AAA /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		660281122821237D00C91AAA /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		843E96A1282A57A500919C19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		843E96A3282A57B100919C19 /* ApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsView.swift; sourceTree = "<group>"; };
+		843E96A6282A5C4900919C19 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8496E80428252B6F00D7C4FA /* FindNaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNaoView.swift; sourceTree = "<group>"; };
-		8496E80628252BD000D7C4FA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8496E80828252C5600D7C4FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8496E80A28252DEA00D7C4FA /* ApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationView.swift; sourceTree = "<group>"; };
 		8496E80D28252EB900D7C4FA /* MainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailView.swift; sourceTree = "<group>"; };
@@ -104,8 +108,11 @@
 		660280EB2821237A00C91AAA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				843E96A5282A5C3700919C19 /* Menu */,
+				843E96A0282A578E00919C19 /* Application */,
+				843E969F282A578700919C19 /* Settings */,
 				8496E80C28252EA700D7C4FA /* Main */,
-				8496E80128252B0300D7C4FA /* Views */,
+				8496E80128252B0300D7C4FA /* UnsortedViews */,
 				8496E80328252B1000D7C4FA /* ViewModels */,
 				8496E80228252B0A00D7C4FA /* Models */,
 				660280EC2821237A00C91AAA /* NAO_AppApp.swift */,
@@ -151,14 +158,37 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
-		8496E80128252B0300D7C4FA /* Views */ = {
+		843E969F282A578700919C19 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				843E96A1282A57A500919C19 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		843E96A0282A578E00919C19 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				843E96A3282A57B100919C19 /* ApplicationsView.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		843E96A5282A5C3700919C19 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				843E96A6282A5C4900919C19 /* MenuView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		8496E80128252B0300D7C4FA /* UnsortedViews */ = {
 			isa = PBXGroup;
 			children = (
 				8496E80428252B6F00D7C4FA /* FindNaoView.swift */,
-				8496E80628252BD000D7C4FA /* SettingsView.swift */,
 				8496E80A28252DEA00D7C4FA /* ApplicationView.swift */,
 			);
-			path = Views;
+			path = UnsortedViews;
 			sourceTree = "<group>";
 		};
 		8496E80228252B0A00D7C4FA /* Models */ = {
@@ -342,8 +372,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843E96A2282A57A500919C19 /* SettingsView.swift in Sources */,
+				843E96A7282A5C4900919C19 /* MenuView.swift in Sources */,
 				8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */,
-				8496E80728252BD000D7C4FA /* SettingsView.swift in Sources */,
+				843E96A4282A57B100919C19 /* ApplicationsView.swift in Sources */,
 				8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */,
 				8496E80928252C5600D7C4FA /* MainView.swift in Sources */,
 				660281142821237D00C91AAA /* NAO_AppApp.swift in Sources */,
