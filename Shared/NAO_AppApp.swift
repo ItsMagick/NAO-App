@@ -12,6 +12,7 @@ struct NAO_AppApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+            #warning("TODO: implement good MVVM")
         }
     }
 }

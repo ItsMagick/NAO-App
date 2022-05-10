@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     
     var body: some View {
-        //TabView Switching between MenuView, ApplicationView, SettingsView
+        //TabView Switching between MenuView, ApplicationView, SettingsViewA
         TabView {
             MenuView()
                 .tabItem {

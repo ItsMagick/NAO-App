@@ -10,7 +10,8 @@ import SwiftUI
 struct MenuView: View {
     
     //dummy data
-    @State var disciplines = ["Motion", "Speech Text", "Recorder", "Audio", "File Manager"]
+    @State var functions = ["Motion", "Speech Text", "Recorder", "Audio", "File Manager"]
+    #warning("TODO: implement API calls and Models")
     
     var body: some View {
         
@@ -22,10 +23,15 @@ struct MenuView: View {
                 .padding()
             
             //MenuList
-            List(disciplines, id: \.self) { discipline in
-              Text(discipline)
-                    .font(.headline)
+            NavigationView{
+                List(functions, id: \.self) { function in
+                    #warning("TODO: implement subViews and popups")
+                  Text(function)
+                        .font(.headline)
+                        
+                } .navigationTitle("Functions")
             }
+            
         }
         
         

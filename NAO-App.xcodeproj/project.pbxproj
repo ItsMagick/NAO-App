@@ -18,10 +18,10 @@
 		843E96A2282A57A500919C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A1282A57A500919C19 /* SettingsView.swift */; };
 		843E96A4282A57B100919C19 /* ApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A3282A57B100919C19 /* ApplicationsView.swift */; };
 		843E96A7282A5C4900919C19 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A6282A5C4900919C19 /* MenuView.swift */; };
+		843E96A9282A6C0F00919C19 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A8282A6C0F00919C19 /* MenuDetailView.swift */; };
 		8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80428252B6F00D7C4FA /* FindNaoView.swift */; };
 		8496E80928252C5600D7C4FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80828252C5600D7C4FA /* MainView.swift */; };
 		8496E80B28252DEA00D7C4FA /* ApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80A28252DEA00D7C4FA /* ApplicationView.swift */; };
-		8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80D28252EB900D7C4FA /* MainDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +56,10 @@
 		843E96A1282A57A500919C19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		843E96A3282A57B100919C19 /* ApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsView.swift; sourceTree = "<group>"; };
 		843E96A6282A5C4900919C19 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		843E96A8282A6C0F00919C19 /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 		8496E80428252B6F00D7C4FA /* FindNaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNaoView.swift; sourceTree = "<group>"; };
 		8496E80828252C5600D7C4FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8496E80A28252DEA00D7C4FA /* ApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationView.swift; sourceTree = "<group>"; };
-		8496E80D28252EB900D7C4FA /* MainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				843E96A6282A5C4900919C19 /* MenuView.swift */,
+				843E96A8282A6C0F00919C19 /* MenuDetailView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -209,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				8496E80828252C5600D7C4FA /* MainView.swift */,
-				8496E80D28252EB900D7C4FA /* MainDetailView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -375,8 +375,8 @@
 				843E96A2282A57A500919C19 /* SettingsView.swift in Sources */,
 				843E96A7282A5C4900919C19 /* MenuView.swift in Sources */,
 				8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */,
+				843E96A9282A6C0F00919C19 /* MenuDetailView.swift in Sources */,
 				843E96A4282A57B100919C19 /* ApplicationsView.swift in Sources */,
-				8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */,
 				8496E80928252C5600D7C4FA /* MainView.swift in Sources */,
 				660281142821237D00C91AAA /* NAO_AppApp.swift in Sources */,
 				8496E80B28252DEA00D7C4FA /* ApplicationView.swift in Sources */,
