@@ -20,8 +20,9 @@
 		843E96A7282A5C4900919C19 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A6282A5C4900919C19 /* MenuView.swift */; };
 		8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80428252B6F00D7C4FA /* FindNaoView.swift */; };
 		8496E80928252C5600D7C4FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80828252C5600D7C4FA /* MainView.swift */; };
-		8496E80B28252DEA00D7C4FA /* ApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80A28252DEA00D7C4FA /* ApplicationView.swift */; };
 		8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80D28252EB900D7C4FA /* MainDetailView.swift */; };
+		9816BD9B282A7B5E00B5324C /* NaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816BD9A282A7B5E00B5324C /* NaoModel.swift */; };
+		9816BD9D282A7C6B00B5324C /* NaoValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816BD9C282A7C6B00B5324C /* NaoValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,9 @@
 		843E96A6282A5C4900919C19 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8496E80428252B6F00D7C4FA /* FindNaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNaoView.swift; sourceTree = "<group>"; };
 		8496E80828252C5600D7C4FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		8496E80A28252DEA00D7C4FA /* ApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationView.swift; sourceTree = "<group>"; };
 		8496E80D28252EB900D7C4FA /* MainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailView.swift; sourceTree = "<group>"; };
+		9816BD9A282A7B5E00B5324C /* NaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaoModel.swift; sourceTree = "<group>"; };
+		9816BD9C282A7C6B00B5324C /* NaoValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaoValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		660280EB2821237A00C91AAA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9816BD99282A7AFB00B5324C /* FindNao */,
 				843E96A5282A5C3700919C19 /* Menu */,
 				843E96A0282A578E00919C19 /* Application */,
 				843E969F282A578700919C19 /* Settings */,
@@ -185,8 +188,6 @@
 		8496E80128252B0300D7C4FA /* UnsortedViews */ = {
 			isa = PBXGroup;
 			children = (
-				8496E80428252B6F00D7C4FA /* FindNaoView.swift */,
-				8496E80A28252DEA00D7C4FA /* ApplicationView.swift */,
 			);
 			path = UnsortedViews;
 			sourceTree = "<group>";
@@ -212,6 +213,16 @@
 				8496E80D28252EB900D7C4FA /* MainDetailView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		9816BD99282A7AFB00B5324C /* FindNao */ = {
+			isa = PBXGroup;
+			children = (
+				8496E80428252B6F00D7C4FA /* FindNaoView.swift */,
+				9816BD9A282A7B5E00B5324C /* NaoModel.swift */,
+				9816BD9C282A7C6B00B5324C /* NaoValues.swift */,
+			);
+			path = FindNao;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9816BD9B282A7B5E00B5324C /* NaoModel.swift in Sources */,
+				9816BD9D282A7C6B00B5324C /* NaoValues.swift in Sources */,
 				843E96A2282A57A500919C19 /* SettingsView.swift in Sources */,
 				843E96A7282A5C4900919C19 /* MenuView.swift in Sources */,
 				8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */,
@@ -379,7 +392,6 @@
 				8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */,
 				8496E80928252C5600D7C4FA /* MainView.swift in Sources */,
 				660281142821237D00C91AAA /* NAO_AppApp.swift in Sources */,
-				8496E80B28252DEA00D7C4FA /* ApplicationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
