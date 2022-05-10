@@ -10,7 +10,8 @@ import SwiftUI
 struct MenuView: View {
     
     //dummy data
-      @State var disciplines = ["Motion", "Speech Text", "Recorder", ".", ".","."]
+    @State var disciplines = ["Motion", "Speech Text", "Recorder", "Audio", "File Manager"]
+    
     var body: some View {
         
         VStack {
@@ -20,6 +21,7 @@ struct MenuView: View {
                 .size(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)/3)
                 .padding()
             
+            //MenuList
             List(disciplines, id: \.self) { discipline in
               Text(discipline)
                     .font(.headline)
