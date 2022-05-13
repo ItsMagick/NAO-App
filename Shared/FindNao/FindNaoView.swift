@@ -18,7 +18,9 @@ struct FindNaoView: View {
                 List(naoData, id: \.self) { nao in
                     Text(nao)
                 }.navigationTitle("Nao Liste")
-                    
+                
+                
+                #warning("TODO: Vorerst eine Leere liste    Der Benutzer fügt mehr Nao's ein via IP addresse mit einem Button. Es wird folglich ein Fenster geöffnet, wo die IP addresse eingegeben wird. Die Daten werden folglich gespeichert, sodass beim Nächsten öffnen der App, die predefined Naos geladen werden kann via ein Button. Es besteht die Möglichkeit, die Daten im Nachhinein zu verändern, wie IP Addresse. Gespeicherte Daten können Manuell gelöscht werden. Jeder dieser hinzugefügte Naos besitzen einen Connect button, der schlussundendlich zum MainView führt. ")
             }
             
         
