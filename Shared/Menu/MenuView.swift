@@ -20,17 +20,10 @@ struct MenuView: View {
             //placeholder for camera
             Rectangle()
                 .size(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)/3)
-                .padding()
+                
             
             //MenuList
-            NavigationView{
-                List(functions, id: \.self) { function in
-                    #warning("TODO: implement subViews and popups")
-                  Text(function)
-                        .font(.headline)
-                        
-                } .navigationTitle("Functions")
-            }
+            MenuNavigationView(functions: functions)
             
         }
         
@@ -43,3 +36,5 @@ struct MenuView_Previews: PreviewProvider {
         MenuView()
     }
 }
+
+

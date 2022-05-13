@@ -10,11 +10,12 @@ import SwiftUI
 struct MenuDetailView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
     }
-}
-
-struct MenuDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuDetailView()
+    
+    struct MenuDetailView_Previews: PreviewProvider {
+        static var previews: some View {
+            MenuDetailView()
+        }
     }
 }

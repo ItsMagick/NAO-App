@@ -9,7 +9,19 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("SettingsView")
+        
+        //NAO Übersicht (Battery, CPU temp)
+        VStack {
+            
+            HStack {
+                //
+                Rectangle()
+//                    .size(width: UIScreen.main.bounds.width/2, height: )
+            }
+            
+            
+        }
+        
     }
 }
 
