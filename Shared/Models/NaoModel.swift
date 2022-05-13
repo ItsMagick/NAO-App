@@ -15,5 +15,5 @@ class NaoModel: Codable, Identifiable{
     let ip : String
     //Wie kommt das bei uns an ?
     
-    
 }
+

@@ -21,6 +21,8 @@
 		8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80428252B6F00D7C4FA /* FindNaoView.swift */; };
 		8496E80928252C5600D7C4FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80828252C5600D7C4FA /* MainView.swift */; };
 		8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80D28252EB900D7C4FA /* MainDetailView.swift */; };
+		84D6AE6F282E6C400094EDC2 /* NaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6AE6E282E6C400094EDC2 /* NaoViewModel.swift */; };
+		84D6AE71282E6ED00094EDC2 /* NaoSaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6AE70282E6ED00094EDC2 /* NaoSaves.swift */; };
 		9816BD9B282A7B5E00B5324C /* NaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816BD9A282A7B5E00B5324C /* NaoModel.swift */; };
 		9816BD9D282A7C6B00B5324C /* NaoValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816BD9C282A7C6B00B5324C /* NaoValues.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		8496E80428252B6F00D7C4FA /* FindNaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNaoView.swift; sourceTree = "<group>"; };
 		8496E80828252C5600D7C4FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8496E80D28252EB900D7C4FA /* MainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailView.swift; sourceTree = "<group>"; };
+		84D6AE6E282E6C400094EDC2 /* NaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaoViewModel.swift; sourceTree = "<group>"; };
+		84D6AE70282E6ED00094EDC2 /* NaoSaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaoSaves.swift; sourceTree = "<group>"; };
 		9816BD9A282A7B5E00B5324C /* NaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaoModel.swift; sourceTree = "<group>"; };
 		9816BD9C282A7C6B00B5324C /* NaoValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaoValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +199,8 @@
 		8496E80228252B0A00D7C4FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9816BD9A282A7B5E00B5324C /* NaoModel.swift */,
+				84D6AE70282E6ED00094EDC2 /* NaoSaves.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 		8496E80328252B1000D7C4FA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				84D6AE6E282E6C400094EDC2 /* NaoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -219,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				8496E80428252B6F00D7C4FA /* FindNaoView.swift */,
-				9816BD9A282A7B5E00B5324C /* NaoModel.swift */,
 				9816BD9C282A7C6B00B5324C /* NaoValues.swift */,
 			);
 			path = FindNao;
@@ -386,12 +392,14 @@
 				9816BD9B282A7B5E00B5324C /* NaoModel.swift in Sources */,
 				9816BD9D282A7C6B00B5324C /* NaoValues.swift in Sources */,
 				843E96A2282A57A500919C19 /* SettingsView.swift in Sources */,
+				84D6AE71282E6ED00094EDC2 /* NaoSaves.swift in Sources */,
 				843E96A7282A5C4900919C19 /* MenuView.swift in Sources */,
 				8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */,
 				843E96A4282A57B100919C19 /* ApplicationsView.swift in Sources */,
 				8496E80E28252EB900D7C4FA /* MainDetailView.swift in Sources */,
 				8496E80928252C5600D7C4FA /* MainView.swift in Sources */,
 				660281142821237D00C91AAA /* NAO_AppApp.swift in Sources */,
+				84D6AE6F282E6C400094EDC2 /* NaoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
