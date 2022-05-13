@@ -16,7 +16,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }
-            ApplicationView()
+            ApplicationsView()
                 .tabItem {
                     Label("Apps", systemImage: "app")
                 }
