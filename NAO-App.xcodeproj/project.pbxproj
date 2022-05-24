@@ -25,6 +25,7 @@
 		84D6AE71282E6ED00094EDC2 /* NaoSaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6AE70282E6ED00094EDC2 /* NaoSaves.swift */; };
 		9816BD9B282A7B5E00B5324C /* NaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816BD9A282A7B5E00B5324C /* NaoModel.swift */; };
 		9816BD9D282A7C6B00B5324C /* NaoValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816BD9C282A7C6B00B5324C /* NaoValues.swift */; };
+		98CA21F8283CED1E0044AE24 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 98CA21F7283CED1E0044AE24 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CA21F8283CED1E0044AE24 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +249,9 @@
 			dependencies = (
 			);
 			name = "NAO-App (iOS)";
+			packageProductDependencies = (
+				98CA21F7283CED1E0044AE24 /* Alamofire */,
+			);
 			productName = "NAO-App (iOS)";
 			productReference = 660280F32821237D00C91AAA /* NAO-App.app */;
 			productType = "com.apple.product-type.application";
@@ -339,6 +344,9 @@
 				Base,
 			);
 			mainGroup = 660280E62821237A00C91AAA;
+			packageReferences = (
+				98CA21F6283CED1E0044AE24 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 660280F42821237D00C91AAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -793,6 +801,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98CA21F6283CED1E0044AE24 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98CA21F7283CED1E0044AE24 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98CA21F6283CED1E0044AE24 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 660280E72821237A00C91AAA /* Project object */;
 }
