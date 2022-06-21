@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    var settingsItems = ["Rest/Wake Up", "Audio Volume", "Speech Volume", "Speech Language", "Autonomous Life", "System Reboot"]
     var body: some View {
         
         //NAO Übersicht (Battery, CPU temp)
         VStack {
-            
-            HStack {
-                //
-                Rectangle()
-//                    .size(width: UIScreen.main.bounds.width/2, height: )
+            NAOView()
+            HStack() {
+                BatteryView(batteryPercent: 50)
+                    .frame(width: 100)
+                CPUView()
             }
             
-            
+            List(settingsItems, id: \.self) { string in
+                Text(string)
+            }
         }
         
     }
@@ -28,5 +32,6 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

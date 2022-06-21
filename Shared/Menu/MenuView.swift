@@ -10,23 +10,13 @@ import SwiftUI
 struct MenuView: View {
     
     //dummy data
-    @State var functions = ["Motion", "Speech Text", "Recorder", "Audio", "File Manager"]
+    @State var functions = ["Camera" , "Motion", "Speech Text", "Recorder", "Audio", "File Manager"]
     #warning("TODO: implement API calls and Models")
     
     var body: some View {
         
-        VStack {
-            
-            //placeholder for camera
-            Rectangle()
-                .size(width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.height)/3)
-                
-            
-            //MenuList
-            MenuNavigationView(functions: functions)
-            
-        }
-        
+        //MenuList
+        MenuNavigationView(functions: functions)
         
     }
 }
