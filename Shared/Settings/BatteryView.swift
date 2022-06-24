@@ -13,9 +13,17 @@ struct BatteryView: View {
     
     var body: some View {
 #warning("TODO: add View to add to the SettingsView")
-        checkBatteryIcon()
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+        VStack() {
+            checkBatteryIcon()
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            Text("\(Int(batteryPercent))%")
+                .font(.largeTitle)
+                .foregroundColor(batteryPercent <= 30 ?
+                    .red : .green)
+            Text("Battery")
+        }
+        
     }
     
     

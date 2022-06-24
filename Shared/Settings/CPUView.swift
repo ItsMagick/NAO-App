@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct CPUView: View {
+    
+    var cpuTemp : Int = 0
+    
     var body: some View {
-        Text("Hello, World!yd  ydfgydf ydgf ")
+        VStack() {
+            
+            Image(systemName: "cpu")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            Text("\(cpuTemp)C")
+                .font(.largeTitle)
+                .foregroundColor(cpuTemp >= 65 ?
+                    .red : .green)
+            Text("CPU Temp")
+        }
     }
 }
 
 struct CPUView_Previews: PreviewProvider {
     static var previews: some View {
-        CPUView()
+        CPUView(cpuTemp: 57)
     }
 }
