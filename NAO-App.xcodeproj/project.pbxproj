@@ -15,18 +15,18 @@
 		660281152821237D00C91AAA /* NAO_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660280EC2821237A00C91AAA /* NAO_AppApp.swift */; };
 		660281182821237D00C91AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660280EE2821237D00C91AAA /* Assets.xcassets */; };
 		660281192821237D00C91AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660280EE2821237D00C91AAA /* Assets.xcassets */; };
+		842F7B11286B0CB700F73999 /* ConnectNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B10286B0CB700F73999 /* ConnectNao.swift */; };
+		842F7B12286B0CB700F73999 /* ConnectNao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B10286B0CB700F73999 /* ConnectNao.swift */; };
+		842F7B14286B362600F73999 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B13286B362500F73999 /* SettingsViewModel.swift */; };
+		842F7B15286B362600F73999 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B13286B362500F73999 /* SettingsViewModel.swift */; };
 		843D454F2861B3D90048DC5D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D454E2861B3D90048DC5D /* CameraView.swift */; };
 		843D45512861B70B0048DC5D /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45502861B70B0048DC5D /* BatteryView.swift */; };
 		843D45532861BB220048DC5D /* CPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45522861BB220048DC5D /* CPUView.swift */; };
 		843D45552861BE010048DC5D /* NAOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45542861BE010048DC5D /* NAOView.swift */; };
-		843D45682865B2650048DC5D /* ApplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45672865B2650048DC5D /* ApplicationModel.swift */; };
 		843E96A2282A57A500919C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A1282A57A500919C19 /* SettingsView.swift */; };
-		843E96A4282A57B100919C19 /* ApplicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A3282A57B100919C19 /* ApplicationsView.swift */; };
 		843E96A7282A5C4900919C19 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A6282A5C4900919C19 /* MenuView.swift */; };
-		843E96A9282A6C0F00919C19 /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A8282A6C0F00919C19 /* MenuDetailView.swift */; };
-		8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80428252B6F00D7C4FA /* FindNaoView.swift */; };
+		84714383286B04B300CAD4BA /* NaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714382286B04B300CAD4BA /* NaoModel.swift */; };
 		8496E80928252C5600D7C4FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80828252C5600D7C4FA /* MainView.swift */; };
-		8496E80B28252DEA00D7C4FA /* ApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80A28252DEA00D7C4FA /* ApplicationView.swift */; };
 		84D6AE6B282E516D0094EDC2 /* MenuNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,18 +59,16 @@
 		6602810C2821237D00C91AAA /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		660281102821237D00C91AAA /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		660281122821237D00C91AAA /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		842F7B10286B0CB700F73999 /* ConnectNao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectNao.swift; sourceTree = "<group>"; };
+		842F7B13286B362500F73999 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		843D454E2861B3D90048DC5D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		843D45502861B70B0048DC5D /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 		843D45522861BB220048DC5D /* CPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUView.swift; sourceTree = "<group>"; };
 		843D45542861BE010048DC5D /* NAOView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAOView.swift; sourceTree = "<group>"; };
-		843D45672865B2650048DC5D /* ApplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModel.swift; sourceTree = "<group>"; };
 		843E96A1282A57A500919C19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		843E96A3282A57B100919C19 /* ApplicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationsView.swift; sourceTree = "<group>"; };
 		843E96A6282A5C4900919C19 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		843E96A8282A6C0F00919C19 /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
-		8496E80428252B6F00D7C4FA /* FindNaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNaoView.swift; sourceTree = "<group>"; };
+		84714382286B04B300CAD4BA /* NaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NaoModel.swift; path = Shared/Application/NaoModel.swift; sourceTree = SOURCE_ROOT; };
 		8496E80828252C5600D7C4FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		8496E80A28252DEA00D7C4FA /* ApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationView.swift; sourceTree = "<group>"; };
 		84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,10 +124,10 @@
 				843E969F282A578700919C19 /* Settings */,
 				8496E80C28252EA700D7C4FA /* Main */,
 				8496E80128252B0300D7C4FA /* UnsortedViews */,
-				8496E80328252B1000D7C4FA /* ViewModels */,
 				8496E80228252B0A00D7C4FA /* Models */,
 				660280EC2821237A00C91AAA /* NAO_AppApp.swift */,
 				660280EE2821237D00C91AAA /* Assets.xcassets */,
+				842F7B10286B0CB700F73999 /* ConnectNao.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -186,6 +184,7 @@
 				843D45502861B70B0048DC5D /* BatteryView.swift */,
 				843D45522861BB220048DC5D /* CPUView.swift */,
 				843D45542861BE010048DC5D /* NAOView.swift */,
+				842F7B13286B362500F73999 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -193,8 +192,6 @@
 		843E96A0282A578E00919C19 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				843E96A3282A57B100919C19 /* ApplicationsView.swift */,
-				843D45672865B2650048DC5D /* ApplicationModel.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -203,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				843E96A6282A5C4900919C19 /* MenuView.swift */,
-				843E96A8282A6C0F00919C19 /* MenuDetailView.swift */,
 				84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */,
 			);
 			path = Menu;
@@ -212,8 +208,6 @@
 		8496E80128252B0300D7C4FA /* UnsortedViews */ = {
 			isa = PBXGroup;
 			children = (
-				8496E80428252B6F00D7C4FA /* FindNaoView.swift */,
-				8496E80A28252DEA00D7C4FA /* ApplicationView.swift */,
 			);
 			path = UnsortedViews;
 			sourceTree = "<group>";
@@ -221,15 +215,9 @@
 		8496E80228252B0A00D7C4FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84714382286B04B300CAD4BA /* NaoModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		8496E80328252B1000D7C4FA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		8496E80C28252EA700D7C4FA /* Main */ = {
@@ -401,17 +389,15 @@
 				843E96A2282A57A500919C19 /* SettingsView.swift in Sources */,
 				843E96A7282A5C4900919C19 /* MenuView.swift in Sources */,
 				843D45512861B70B0048DC5D /* BatteryView.swift in Sources */,
+				842F7B11286B0CB700F73999 /* ConnectNao.swift in Sources */,
 				843D45552861BE010048DC5D /* NAOView.swift in Sources */,
 				843D45532861BB220048DC5D /* CPUView.swift in Sources */,
-				8496E80528252B6F00D7C4FA /* FindNaoView.swift in Sources */,
 				843D454F2861B3D90048DC5D /* CameraView.swift in Sources */,
-				843E96A9282A6C0F00919C19 /* MenuDetailView.swift in Sources */,
-				843E96A4282A57B100919C19 /* ApplicationsView.swift in Sources */,
 				84D6AE6B282E516D0094EDC2 /* MenuNavigationView.swift in Sources */,
 				8496E80928252C5600D7C4FA /* MainView.swift in Sources */,
 				660281142821237D00C91AAA /* NAO_AppApp.swift in Sources */,
-				843D45682865B2650048DC5D /* ApplicationModel.swift in Sources */,
-				8496E80B28252DEA00D7C4FA /* ApplicationView.swift in Sources */,
+				84714383286B04B300CAD4BA /* NaoModel.swift in Sources */,
+				842F7B14286B362600F73999 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +406,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				660281152821237D00C91AAA /* NAO_AppApp.swift in Sources */,
+				842F7B12286B0CB700F73999 /* ConnectNao.swift in Sources */,
+				842F7B15286B362600F73999 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

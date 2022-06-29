@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var settingsVm : SettingsViewModel
     
     var body: some View {
         //TabView Switching between MenuView, ApplicationView, SettingsViewA
@@ -16,11 +17,7 @@ struct MainView: View {
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }
-            ApplicationView()
-                .tabItem {
-                    Label("Apps", systemImage: "app")
-                }
-            SettingsView()
+            SettingsView(vm: settingsVm)
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
@@ -33,7 +30,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(settingsVm: SettingsViewModel.init())
     }
 }
 

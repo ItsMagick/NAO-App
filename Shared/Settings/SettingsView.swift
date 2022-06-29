@@ -11,31 +11,33 @@ struct SettingsView: View {
     
     @State var isAwake : Bool = true
     @State var autonomousLife : Bool = true
-    var ip : String = "192.168.178.41"
     @State private var language = 0
     @State private var languages = ["German", "English"]
+    @State private var audioVolume = 1
+    @State private var audioVolumes = ["0","25", "50","75", "100"]
     
-    @State private var volume = 1
-    @State private var volumes = ["0","25","50", "75", "100"]
+    
+    @ObservedObject var vm: SettingsViewModel
     
     var body: some View {
         
         //NAO Übersicht (Battery, CPU temp)
+        NavigationView {
         VStack {
-            NAOView(ip: ip)
+            NAOView()
             HStack(spacing: 20) {
                 
-                BatteryView(batteryPercent: 50)
+                BatteryView()
                     .frame(width: 150, height: 150)
-                    
-                    
+                
+                
                 Divider()
                 
-                CPUView(cpuTemp: 57)
+                CPUView()
                     .frame(width: 150, height: 150)
             }
             
-            NavigationView {
+            
             List() {
                 Toggle(isOn: $isAwake) {
                     Text("Rest/Wake up")
@@ -43,14 +45,20 @@ struct SettingsView: View {
                 Toggle(isOn: $autonomousLife) {
                     Text("Autonomous Life")
                 }
-                
-                
-                Picker("Speech Volume", selection: $volume, content: {
-                    ForEach(volumes.indices) {index in
-                        Text(volumes[index]).tag(index)
+                /*
+                 Audio Volume Picker
+                 */
+                Picker("Audio Volume", selection: $audioVolume, content: {
+                    ForEach(audioVolumes.indices) {index in
+                        Text(audioVolumes[index]).tag(index)
                     }
-                }).pickerStyle(SegmentedPickerStyle())
-                Picker("Speech language", selection: $language, content: {
+                })
+                
+                
+                /*
+                 Language Picker
+                 */
+                Picker("Language", selection: $language, content: {
                     ForEach (languages.indices) { index in
                         Text(languages[index]).tag(index)
                     }
@@ -68,17 +76,18 @@ struct SettingsView: View {
                 }.buttonStyle(.borderedProminent)
                 
             }.padding()
-                
-            }.navigationTitle("Test")
             
-        }
+        }.navigationTitle("Settings")
         
+        }
     }
+    
+    
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView(isAwake: true)
-            .previewInterfaceOrientation(.portraitUpsideDown)
-    }
-}
+//struct SettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsView()
+//            .previewInterfaceOrientation(.portraitUpsideDown)
+//    }
+//}

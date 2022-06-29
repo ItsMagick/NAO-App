@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CPUView: View {
-    
-    var cpuTemp : Int = 0
-    
+        
+    var cpuTemp = NaoModelSingleton.sharedInstance.nao?.cpu ?? 0
     var body: some View {
         VStack() {
             
@@ -18,7 +17,7 @@ struct CPUView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            Text("\(cpuTemp)C")
+            Text("\(cpuTemp)")
                 .font(.largeTitle)
                 .foregroundColor(cpuTemp >= 65 ?
                     .red : .green)
@@ -29,6 +28,6 @@ struct CPUView: View {
 
 struct CPUView_Previews: PreviewProvider {
     static var previews: some View {
-        CPUView(cpuTemp: 57)
+        CPUView()
     }
 }

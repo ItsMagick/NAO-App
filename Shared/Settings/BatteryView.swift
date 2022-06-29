@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct BatteryView: View {
-#warning("TODO: observ and publish to batteryPercent")
-    var batteryPercent: Float = 0
+    
+    var batteryPercent = NaoModelSingleton.sharedInstance.nao?.battery ?? 0
     
     var body: some View {
-#warning("TODO: add View to add to the SettingsView")
         VStack() {
             checkBatteryIcon()
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            Text("\(Int(batteryPercent))%")
+            Text("\(batteryPercent)")
                 .font(.largeTitle)
                 .foregroundColor(batteryPercent <= 30 ?
                     .red : .green)
@@ -28,7 +27,7 @@ struct BatteryView: View {
     
     
     func checkBatteryIcon() -> Image {
-        switch batteryPercent {
+        switch batteryPercent  {
         case 0...40:
             return Image(systemName: "battery.25")
         case 41...65:
@@ -45,6 +44,6 @@ struct BatteryView: View {
 
 struct BatteryView_Previews: PreviewProvider {
     static var previews: some View {
-        BatteryView(batteryPercent: 25)
+        BatteryView()
     }
 }

@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct NAO_AppApp: App {
+    @ObservedObject var singleton = NaoModelSingleton.sharedInstance
     var body: some Scene {
         WindowGroup {
-            MainView()
-            #warning("TODO: implement good MVVM")
+            if(singleton.nao != nil){
+                MainView(settingsVm: SettingsViewModel.init())
+            } else {
+                ConnectNao()
+            }
         }
     }
 }

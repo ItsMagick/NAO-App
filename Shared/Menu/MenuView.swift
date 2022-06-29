@@ -11,7 +11,7 @@ struct MenuView: View {
     
     //dummy data
     @State var functions = ["Camera" , "Motion", "Speech Text", "Recorder", "Audio", "File Manager"]
-    #warning("TODO: implement API calls and Models")
+    #warning("TODO: implement API calls and add List showing what can be done in the Functions Tab")
     
     var body: some View {
         
