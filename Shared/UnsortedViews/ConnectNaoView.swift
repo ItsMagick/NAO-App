@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConnectNao: View {
+struct ConnectNaoView: View {
     @State var ipText: String = ""
     
     var body: some View {
@@ -17,6 +17,7 @@ struct ConnectNao: View {
                 .keyboardType(.numbersAndPunctuation)
                 .textFieldStyle(.roundedBorder)
                 .padding()
+                .frame(width: 200)
             HStack {
                 Button("Fertig") {
                     let nao = NaoModel()
@@ -37,6 +38,6 @@ struct ConnectNao: View {
 
 struct ConnectNao_Previews: PreviewProvider {
     static var previews: some View {
-        ConnectNao()
+        ConnectNaoView()
     }
 }
