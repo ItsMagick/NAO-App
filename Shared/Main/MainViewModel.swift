@@ -87,7 +87,7 @@ class MainViewModel : ObservableObject {
     internal func getLanguage() -> String {
         return singleton.nao?.getLanguage() ?? ""
     }
-    
+    /*
     internal func getBattery(){
         let url = URL(string : "http://\(getIp()):\(port)")!
         var request = URLRequest(url: url)
@@ -100,6 +100,7 @@ class MainViewModel : ObservableObject {
         
         
     }
+     */
     
     
     

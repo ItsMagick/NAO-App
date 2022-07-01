@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NAOView: View {
+    @State var vm: SettingsViewModel
     
     var body: some View {
         
@@ -18,8 +19,8 @@ struct NAOView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4, alignment: .leading)
             VStack(alignment: .leading) {
-                Text(NaoModelSingleton.sharedInstance.nao?.name ?? "")
-                Text(NaoModelSingleton.sharedInstance.nao?.ip ?? "")
+                Text("Nao3")
+                Text(vm.getIp())
             }
             
             
@@ -37,7 +38,7 @@ struct NAOView: View {
     
     struct NAOView_Previews: PreviewProvider {
         static var previews: some View {
-            NAOView()
+            NAOView(vm: SettingsViewModel.init())
         }
     }
 }

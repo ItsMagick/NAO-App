@@ -24,7 +24,7 @@ struct SettingsView: View {
         //NAO Übersicht (Battery, CPU temp)
         NavigationView {
         VStack {
-            NAOView()
+            NAOView(vm: vm)
             HStack(spacing: 20) {
                 
                 BatteryView(vm: vm)
