@@ -39,14 +39,14 @@ import Combine
             ##########################Setters###########################
      */
     internal func setBatteryPercent(newBatteryPercent: Int) {
-        NaoModelSingleton.sharedInstance.nao?.setBattery(batteryPercent: newBatteryPercent)
+        singleton.nao?.setBattery(batteryPercent: newBatteryPercent)
     }
     internal func setCpuTemp(newCpuTemt: Int) {
-        NaoModelSingleton.sharedInstance.nao?.setCpu(cpuDegree: newCpuTemt)
+        singleton.nao?.setCpu(cpuDegree: newCpuTemt)
     }
     internal func setLanguage(newLanguage : String) {
         #warning("TODO: API request to set language, if response 200 -> code below")
-        NaoModelSingleton.sharedInstance.nao?.setLanguage(newLanguage: newLanguage)
+        singleton.nao?.setLanguage(newLanguage: newLanguage)
     }
     
     internal func setIp(newIp: String) {
@@ -61,14 +61,14 @@ import Combine
      */
     internal func getCpuTemp() -> Int {
         //get data from model
-        return NaoModelSingleton.sharedInstance.nao?.getCpu() ?? 0
+        return singleton.nao?.getCpu() ?? 0
     }
     internal func getBatteryPercent() -> Int {
         //get data from model
-        return NaoModelSingleton.sharedInstance.nao?.getBattery() ?? 0
+        return singleton.nao?.getBattery() ?? 0
     }
     internal func getIp() -> String {
-        return singleton.nao?.getIp() ?? ""
+        return singleton.nao?.getIp() ?? "N.A"
     }
     internal func getVolume() -> Double {
         return singleton.nao?.getVolume() ?? 0.0

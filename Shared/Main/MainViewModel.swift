@@ -88,6 +88,19 @@ class MainViewModel : ObservableObject {
         return singleton.nao?.getLanguage() ?? ""
     }
     
+    internal func getBattery(){
+        let url = URL(string : "http://\(getIp()):\(port)")!
+        var request = URLRequest(url: url)
+        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "" : ""
+            "" : ""
+        ]
+        
+        
+    }
+    
     
     
 }
