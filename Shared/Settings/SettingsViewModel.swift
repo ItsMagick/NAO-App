@@ -10,11 +10,24 @@ import Combine
 
 @MainActor class SettingsViewModel : ObservableObject {
     
+    @Published var didChange = true
+    fileprivate let singleton = NaoModelSingleton.sharedInstance
+    fileprivate var subscription : AnyCancellable!
+    
     init() {
+        
+        subscription = SettingsViewModel().modelNotifier().sink{
+            self.didChange.toggle()
+        }
         Task {
             await fetchData()
         }
     }
+    
+    func modelNotifier() -> ObservableObjectPublisher {
+        return singleton.objectWillChange
+    }
+    
     
     internal func fetchData() async {
         #warning("TODO: API call, add data to NaoModel with given setters")
@@ -31,22 +44,37 @@ import Combine
     internal func setCpuTemp(newCpuTemt: Int) {
         NaoModelSingleton.sharedInstance.nao?.setCpu(cpuDegree: newCpuTemt)
     }
-    internal func setLanguage(newLanguage : String) async {
+    internal func setLanguage(newLanguage : String) {
         #warning("TODO: API request to set language, if response 200 -> code below")
         NaoModelSingleton.sharedInstance.nao?.setLanguage(newLanguage: newLanguage)
+    }
+    
+    internal func setIp(newIp: String) {
+        singleton.nao?.setIp(newIp: newIp)
+    }
+    internal func setVolume(newVolume: Double) {
+        singleton.nao?.setVolume(newVolume: newVolume)
     }
     
     /*
             ##########################Getters###########################
      */
-    internal func getCpuTemp() async -> Int {
+    internal func getCpuTemp() -> Int {
         //get data from model
         return NaoModelSingleton.sharedInstance.nao?.getCpu() ?? 0
     }
-    internal func getBatteryPercent() async -> Int {
+    internal func getBatteryPercent() -> Int {
         //get data from model
         return NaoModelSingleton.sharedInstance.nao?.getBattery() ?? 0
     }
+    internal func getIp() -> String {
+        return singleton.nao?.getIp() ?? ""
+    }
+    internal func getVolume() -> Double {
+        return singleton.nao?.getVolume() ?? 0.0
+    }
+    
+    
     
    
     

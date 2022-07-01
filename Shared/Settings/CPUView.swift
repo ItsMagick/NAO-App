@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CPUView: View {
         
-    @ObservedObject var vm = MainViewModel()
-    var cpuTemp = NaoModelSingleton.sharedInstance.nao?.cpu ?? 0
+    @State var vm : SettingsViewModel
+    
     var body: some View {
         VStack() {
             
@@ -18,9 +18,9 @@ struct CPUView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            Text("\(cpuTemp)")
+            Text("\(vm.getCpuTemp())")
                 .font(.largeTitle)
-                .foregroundColor(cpuTemp >= 65 ?
+                .foregroundColor(vm.getCpuTemp() >= 65 ?
                     .red : .green)
             Text("CPU Temp")
         }
@@ -29,6 +29,6 @@ struct CPUView: View {
 
 struct CPUView_Previews: PreviewProvider {
     static var previews: some View {
-        CPUView()
+        CPUView(vm: SettingsViewModel.init())
     }
 }

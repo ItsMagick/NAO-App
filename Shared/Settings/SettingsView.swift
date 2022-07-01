@@ -27,13 +27,13 @@ struct SettingsView: View {
             NAOView()
             HStack(spacing: 20) {
                 
-                BatteryView()
+                BatteryView(vm: vm)
                     .frame(width: 150, height: 150)
                 
                 
                 Divider()
                 
-                CPUView()
+                CPUView(vm: vm)
                     .frame(width: 150, height: 150)
             }
             
