@@ -21,7 +21,7 @@ struct ConnectNaoView: View {
             HStack {
                 Button("Fertig") {
                     let nao = NaoModel()
-                    nao.name = "Jan"
+                    nao.name = "Nao"
                     nao.ip = ipText
                     NaoModelSingleton.sharedInstance.nao = nao
                 }.buttonStyle(.borderedProminent)

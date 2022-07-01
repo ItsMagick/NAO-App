@@ -16,9 +16,9 @@ import Combine
     
     init() {
         
-        subscription = SettingsViewModel().modelNotifier().sink{
-            self.didChange.toggle()
-        }
+//        subscription = SettingsViewModel().modelNotifier().sink{
+//            self.didChange.toggle()
+//        }
         Task {
             await fetchData()
         }

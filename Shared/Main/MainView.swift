@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var settingsVm : SettingsViewModel
+    @ObservedObject var settingsVm = SettingsViewModel.init()
     
     var body: some View {
         //TabView Switching between MenuView, ApplicationView, SettingsViewA
