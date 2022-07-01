@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CPUView: View {
         
+    @ObservedObject var vm = MainViewModel()
     var cpuTemp = NaoModelSingleton.sharedInstance.nao?.cpu ?? 0
     var body: some View {
         VStack() {
