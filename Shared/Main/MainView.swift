@@ -9,11 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var settingsVm = SettingsViewModel.init()
+    @ObservedObject var mainVm = MainViewModel.init()
     
     var body: some View {
         //TabView Switching between MenuView, ApplicationView, SettingsViewA
         TabView {
-            MenuView()
+            MenuView(vm: mainVm)
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }

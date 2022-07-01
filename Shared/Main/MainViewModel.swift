@@ -9,6 +9,10 @@ import Foundation
 import Combine
 
 class MainViewModel : ObservableObject {
+    let naoPort = 9559
+    let pyServerPort = 8283
+    
+    //let url = URL(string : "http://\(getIp()):\(port)")!
     
     fileprivate let singleton = NaoModelSingleton.sharedInstance
 
@@ -87,20 +91,33 @@ class MainViewModel : ObservableObject {
     internal func getLanguage() -> String {
         return singleton.nao?.getLanguage() ?? ""
     }
-    /*
+    
     internal func getBattery(){
-        let url = URL(string : "http://\(getIp()):\(port)")!
+        let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
         request.setValue("spplication/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
-            "" : ""
-            "" : ""
+            "messageId" : "0",
+            "actionID" : "batteryInfo",
+            "naoIP" : "\(getIp())",
+            "naoPort" : "\(naoPort)"
         ]
-        
-        
+        let json = try? JSONSerialization.data(withJSONObject: parameters)
+        request.httpBody = json
+        let task = URLSession.shared.dataTask(with: request){data, response, error in
+            guard let data = data, error == nil else{
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let response = try? JSONSerialization.jsonObject(with: data, options:[])
+            if let response = response as? [String: Any]{
+                print(response)
+            }
+        }
+        task.resume()
     }
-     */
+     
     
     
     

@@ -20,7 +20,7 @@ struct NAOView: View {
                 .frame(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4, alignment: .leading)
             VStack(alignment: .leading) {
                 Text("Nao3")
-                Text(vm.getIp())
+                Text(vm.getIp() ?? "")
             }
             
             
