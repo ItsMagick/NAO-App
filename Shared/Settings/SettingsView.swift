@@ -19,6 +19,7 @@ struct SettingsView: View {
     
     @ObservedObject var vm: SettingsViewModel
     
+    
     var body: some View {
         
         //NAO Übersicht (Battery, CPU temp)
@@ -52,7 +53,12 @@ struct SettingsView: View {
                     ForEach(audioVolumes.indices) {index in
                         Text(audioVolumes[index]).tag(index)
                     }
-                })
+                }).onChange(of: audioVolume){value in
+                    if let volume = Double(audioVolumes[audioVolume]){
+                        vm.setVolume(newVolume: volume/100)
+                        
+                    }
+                }
                 
                 
                 /*
@@ -62,9 +68,10 @@ struct SettingsView: View {
                     ForEach (languages.indices) { index in
                         Text(languages[index]).tag(index)
                     }
-                    
-                    
                 }).pickerStyle(.inline)
+                    .onChange(of: language){value in
+                    vm.setLanguage(newLanguage: languages[language])
+                }
             }
             HStack() {
                 Button("Reboot") {

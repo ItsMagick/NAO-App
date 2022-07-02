@@ -94,6 +94,7 @@ class MainViewModel : ObservableObject {
     
     ///gets Battery from Nao
     internal func getBattery() -> Int{
+        //get battery from nao
         var daten:Int = 0
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
@@ -119,6 +120,7 @@ class MainViewModel : ObservableObject {
             }
         }
         task.resume()
+        setBatteryPercent(newBatteryPercent: daten)
         return daten
     }
     
@@ -147,9 +149,7 @@ class MainViewModel : ObservableObject {
         
     }
     
-    func sleep(){
-        
-    }
+    
     
     func playAudio(){
         
@@ -158,10 +158,7 @@ class MainViewModel : ObservableObject {
     func stopAudio(){
         
     }
-    
-    func setVolume(){
-        
-    }
+
     
     
 }
