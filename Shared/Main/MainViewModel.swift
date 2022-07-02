@@ -92,7 +92,9 @@ class MainViewModel : ObservableObject {
         return singleton.nao?.getLanguage() ?? ""
     }
     
-    internal func getBattery(){
+    ///gets Battery from Nao
+    internal func getBattery() -> Int{
+        var daten:Int = 0
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
         request.setValue("spplication/json", forHTTPHeaderField: "Accept")
@@ -112,13 +114,54 @@ class MainViewModel : ObservableObject {
             }
             let response = try? JSONSerialization.jsonObject(with: data, options:[])
             if let response = response as? [String: Any]{
-                print(response)
+                
+                daten = response["data"] as! Int
             }
         }
         task.resume()
+        return daten
+    }
+    
+    
+    ///send text to speech form to nao
+    func textToSpeech(text:String){
+        let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
+        var request = URLRequest(url: url)
+        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "messageId" : "0",
+            "actionID" : "tts",
+            "data" : [
+                "text": "\(text)"
+            ],
+            "naoIP" : "\(getIp())",
+            "naoPort" : "\(naoPort)"
+        ]
+        let json = try? JSONSerialization.data(withJSONObject: parameters)
+        request.httpBody = json
+        
+    }
+    
+    func move(){
+        
+    }
+    
+    func sleep(){
+        
+    }
+    
+    func playAudio(){
+        
     }
      
+    func stopAudio(){
+        
+    }
     
+    func setVolume(){
+        
+    }
     
     
 }
