@@ -23,6 +23,7 @@ struct MainView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
+        #warning("TODO: UI für die Funktionalitäten.")
         
     }
     

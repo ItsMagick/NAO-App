@@ -146,17 +146,43 @@ class MainViewModel : ObservableObject {
     }
     
     func move(){
-        
+        #warning("movement funktionalität implementieren.")
     }
     
+
     
     
     func playAudio(){
-        
+        let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
+        var request = URLRequest(url: url)
+        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "messageId" : "0",
+            "actionID" : "audioPlayer",
+            "data" : [
+                "path": "/home/nao/naoqui/hope.wav"
+            ],
+            "naoIP" : "\(getIp())",
+            "naoPort" : "\(naoPort)"
+        ]
+        let json = try? JSONSerialization.data(withJSONObject: parameters)
+        request.httpBody = json
     }
      
     func stopAudio(){
-        
+        let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
+        var request = URLRequest(url: url)
+        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "messageId" : "0",
+            "actionID" : "audioStop",
+            "naoIP" : "\(getIp())",
+            "naoPort" : "\(naoPort)"
+        ]
+        let json = try? JSONSerialization.data(withJSONObject: parameters)
+        request.httpBody = json
     }
 
     

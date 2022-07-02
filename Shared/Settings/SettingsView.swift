@@ -42,6 +42,10 @@ struct SettingsView: View {
             List() {
                 Toggle(isOn: $isAwake) {
                     Text("Rest/Wake up")
+                }.onChange(of: isAwake){value in
+                    if(isAwake == false){
+                        vm.setAsleep()
+                    }else{ vm.setAwake()}
                 }
                 Toggle(isOn: $autonomousLife) {
                     Text("Autonomous Life")
