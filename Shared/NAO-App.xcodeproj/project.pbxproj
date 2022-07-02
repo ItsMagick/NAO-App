@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		660281052821237D00C91AAA /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660281042821237D00C91AAA /* Tests_iOS.swift */; };
+		660281072821237D00C91AAA /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660281062821237D00C91AAA /* Tests_iOSLaunchTests.swift */; };
+		660281112821237D00C91AAA /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660281102821237D00C91AAA /* Tests_macOS.swift */; };
+		660281132821237D00C91AAA /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660281122821237D00C91AAA /* Tests_macOSLaunchTests.swift */; };
+		660281142821237D00C91AAA /* NAO_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660280EC2821237A00C91AAA /* NAO_AppApp.swift */; };
+		660281152821237D00C91AAA /* NAO_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660280EC2821237A00C91AAA /* NAO_AppApp.swift */; };
+		660281182821237D00C91AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660280EE2821237D00C91AAA /* Assets.xcassets */; };
+		660281192821237D00C91AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660280EE2821237D00C91AAA /* Assets.xcassets */; };
+		842F7B11286B0CB700F73999 /* ConnectNaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B10286B0CB700F73999 /* ConnectNaoView.swift */; };
+		842F7B12286B0CB700F73999 /* ConnectNaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B10286B0CB700F73999 /* ConnectNaoView.swift */; };
+		842F7B14286B362600F73999 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B13286B362500F73999 /* SettingsViewModel.swift */; };
+		842F7B15286B362600F73999 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F7B13286B362500F73999 /* SettingsViewModel.swift */; };
+		843D454F2861B3D90048DC5D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D454E2861B3D90048DC5D /* CameraView.swift */; };
+		843D45512861B70B0048DC5D /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45502861B70B0048DC5D /* BatteryView.swift */; };
+		843D45532861BB220048DC5D /* CPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45522861BB220048DC5D /* CPUView.swift */; };
+		843D45552861BE010048DC5D /* NAOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45542861BE010048DC5D /* NAOView.swift */; };
+		843E96A2282A57A500919C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A1282A57A500919C19 /* SettingsView.swift */; };
+		843E96A7282A5C4900919C19 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A6282A5C4900919C19 /* MenuView.swift */; };
+		84584B28286F01A10045D1E9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84584B27286F01A10045D1E9 /* MainViewModel.swift */; };
+		84635BD5286C94C2001E470A /* SplashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84635BD4286C94C2001E470A /* SplashscreenView.swift */; };
+		84635BD6286C94C2001E470A /* SplashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84635BD4286C94C2001E470A /* SplashscreenView.swift */; };
+		84714383286B04B300CAD4BA /* NaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714382286B04B300CAD4BA /* NaoModel.swift */; };
+		8496E80928252C5600D7C4FA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496E80828252C5600D7C4FA /* MainView.swift */; };
+		84D6AE6B282E516D0094EDC2 /* MenuNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		660281012821237D00C91AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 660280E72821237A00C91AAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 660280F22821237D00C91AAA;
+			remoteInfo = "NAO-App (iOS)";
+		};
+		6602810D2821237D00C91AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 660280E72821237A00C91AAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 660280F82821237D00C91AAA;
+			remoteInfo = "NAO-App (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		660280EC2821237A00C91AAA /* NAO_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAO_AppApp.swift; sourceTree = "<group>"; };
+		660280EE2821237D00C91AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		660280F32821237D00C91AAA /* NAO-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NAO-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		660280F92821237D00C91AAA /* NAO-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NAO-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		660280FB2821237D00C91AAA /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		660281002821237D00C91AAA /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		660281042821237D00C91AAA /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		660281062821237D00C91AAA /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		6602810C2821237D00C91AAA /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		660281102821237D00C91AAA /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		660281122821237D00C91AAA /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		842F7B10286B0CB700F73999 /* ConnectNaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectNaoView.swift; sourceTree = "<group>"; };
+		842F7B13286B362500F73999 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		843D454E2861B3D90048DC5D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		843D45502861B70B0048DC5D /* BatteryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
+		843D45522861BB220048DC5D /* CPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUView.swift; sourceTree = "<group>"; };
+		843D45542861BE010048DC5D /* NAOView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAOView.swift; sourceTree = "<group>"; };
+		843E96A1282A57A500919C19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		843E96A6282A5C4900919C19 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		84584B27286F01A10045D1E9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		84635BD4286C94C2001E470A /* SplashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenView.swift; sourceTree = "<group>"; };
+		84714382286B04B300CAD4BA /* NaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NaoModel.swift; path = Shared/Application/NaoModel.swift; sourceTree = SOURCE_ROOT; };
+		8496E80828252C5600D7C4FA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		660280F02821237D00C91AAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660280F62821237D00C91AAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660280FD2821237D00C91AAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660281092821237D00C91AAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		660280E62821237A00C91AAA = {
+			isa = PBXGroup;
+			children = (
+				660280EB2821237A00C91AAA /* Shared */,
+				660280FA2821237D00C91AAA /* macOS */,
+				660281032821237D00C91AAA /* Tests iOS */,
+				6602810F2821237D00C91AAA /* Tests macOS */,
+				660280F42821237D00C91AAA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		660280EB2821237A00C91AAA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				843D454D2861B3C70048DC5D /* Camera */,
+				843E96A5282A5C3700919C19 /* Menu */,
+				843E969F282A578700919C19 /* Settings */,
+				8496E80C28252EA700D7C4FA /* Main */,
+				8496E80128252B0300D7C4FA /* UnsortedViews */,
+				8496E80228252B0A00D7C4FA /* Models */,
+				660280EC2821237A00C91AAA /* NAO_AppApp.swift */,
+				660280EE2821237D00C91AAA /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		660280F42821237D00C91AAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				660280F32821237D00C91AAA /* NAO-App.app */,
+				660280F92821237D00C91AAA /* NAO-App.app */,
+				660281002821237D00C91AAA /* Tests iOS.xctest */,
+				6602810C2821237D00C91AAA /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		660280FA2821237D00C91AAA /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				660280FB2821237D00C91AAA /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		660281032821237D00C91AAA /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				660281042821237D00C91AAA /* Tests_iOS.swift */,
+				660281062821237D00C91AAA /* Tests_iOSLaunchTests.swift */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		6602810F2821237D00C91AAA /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				660281102821237D00C91AAA /* Tests_macOS.swift */,
+				660281122821237D00C91AAA /* Tests_macOSLaunchTests.swift */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		843D454D2861B3C70048DC5D /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				843D454E2861B3D90048DC5D /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		843E969F282A578700919C19 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				843E96A1282A57A500919C19 /* SettingsView.swift */,
+				843D45502861B70B0048DC5D /* BatteryView.swift */,
+				843D45522861BB220048DC5D /* CPUView.swift */,
+				843D45542861BE010048DC5D /* NAOView.swift */,
+				842F7B13286B362500F73999 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		843E96A5282A5C3700919C19 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				843E96A6282A5C4900919C19 /* MenuView.swift */,
+				84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		8496E80128252B0300D7C4FA /* UnsortedViews */ = {
+			isa = PBXGroup;
+			children = (
+				84635BD4286C94C2001E470A /* SplashscreenView.swift */,
+				842F7B10286B0CB700F73999 /* ConnectNaoView.swift */,
+			);
+			path = UnsortedViews;
+			sourceTree = "<group>";
+		};
+		8496E80228252B0A00D7C4FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84714382286B04B300CAD4BA /* NaoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8496E80C28252EA700D7C4FA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8496E80828252C5600D7C4FA /* MainView.swift */,
+				84584B27286F01A10045D1E9 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		660280F22821237D00C91AAA /* NAO-App (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6602811C2821237D00C91AAA /* Build configuration list for PBXNativeTarget "NAO-App (iOS)" */;
+			buildPhases = (
+				660280EF2821237D00C91AAA /* Sources */,
+				660280F02821237D00C91AAA /* Frameworks */,
+				660280F12821237D00C91AAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NAO-App (iOS)";
+			productName = "NAO-App (iOS)";
+			productReference = 660280F32821237D00C91AAA /* NAO-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		660280F82821237D00C91AAA /* NAO-App (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6602811F2821237D00C91AAA /* Build configuration list for PBXNativeTarget "NAO-App (macOS)" */;
+			buildPhases = (
+				660280F52821237D00C91AAA /* Sources */,
+				660280F62821237D00C91AAA /* Frameworks */,
+				660280F72821237D00C91AAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NAO-App (macOS)";
+			productName = "NAO-App (macOS)";
+			productReference = 660280F92821237D00C91AAA /* NAO-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		660280FF2821237D00C91AAA /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660281222821237D00C91AAA /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				660280FC2821237D00C91AAA /* Sources */,
+				660280FD2821237D00C91AAA /* Frameworks */,
+				660280FE2821237D00C91AAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				660281022821237D00C91AAA /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = 660281002821237D00C91AAA /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6602810B2821237D00C91AAA /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 660281252821237D00C91AAA /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				660281082821237D00C91AAA /* Sources */,
+				660281092821237D00C91AAA /* Frameworks */,
+				6602810A2821237D00C91AAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6602810E2821237D00C91AAA /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = 6602810C2821237D00C91AAA /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		660280E72821237A00C91AAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					660280F22821237D00C91AAA = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					660280F82821237D00C91AAA = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					660280FF2821237D00C91AAA = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 660280F22821237D00C91AAA;
+					};
+					6602810B2821237D00C91AAA = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 660280F82821237D00C91AAA;
+					};
+				};
+			};
+			buildConfigurationList = 660280EA2821237A00C91AAA /* Build configuration list for PBXProject "NAO-App" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 660280E62821237A00C91AAA;
+			productRefGroup = 660280F42821237D00C91AAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				660280F22821237D00C91AAA /* NAO-App (iOS) */,
+				660280F82821237D00C91AAA /* NAO-App (macOS) */,
+				660280FF2821237D00C91AAA /* Tests iOS */,
+				6602810B2821237D00C91AAA /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		660280F12821237D00C91AAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660281182821237D00C91AAA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660280F72821237D00C91AAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660281192821237D00C91AAA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660280FE2821237D00C91AAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6602810A2821237D00C91AAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		660280EF2821237D00C91AAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843E96A2282A57A500919C19 /* SettingsView.swift in Sources */,
+				84635BD5286C94C2001E470A /* SplashscreenView.swift in Sources */,
+				843E96A7282A5C4900919C19 /* MenuView.swift in Sources */,
+				843D45512861B70B0048DC5D /* BatteryView.swift in Sources */,
+				842F7B11286B0CB700F73999 /* ConnectNaoView.swift in Sources */,
+				843D45552861BE010048DC5D /* NAOView.swift in Sources */,
+				843D45532861BB220048DC5D /* CPUView.swift in Sources */,
+				84584B28286F01A10045D1E9 /* MainViewModel.swift in Sources */,
+				843D454F2861B3D90048DC5D /* CameraView.swift in Sources */,
+				84D6AE6B282E516D0094EDC2 /* MenuNavigationView.swift in Sources */,
+				8496E80928252C5600D7C4FA /* MainView.swift in Sources */,
+				660281142821237D00C91AAA /* NAO_AppApp.swift in Sources */,
+				84714383286B04B300CAD4BA /* NaoModel.swift in Sources */,
+				842F7B14286B362600F73999 /* SettingsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660280F52821237D00C91AAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660281152821237D00C91AAA /* NAO_AppApp.swift in Sources */,
+				842F7B12286B0CB700F73999 /* ConnectNaoView.swift in Sources */,
+				842F7B15286B362600F73999 /* SettingsViewModel.swift in Sources */,
+				84635BD6286C94C2001E470A /* SplashscreenView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660280FC2821237D00C91AAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660281072821237D00C91AAA /* Tests_iOSLaunchTests.swift in Sources */,
+				660281052821237D00C91AAA /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		660281082821237D00C91AAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				660281132821237D00C91AAA /* Tests_macOSLaunchTests.swift in Sources */,
+				660281112821237D00C91AAA /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		660281022821237D00C91AAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 660280F22821237D00C91AAA /* NAO-App (iOS) */;
+			targetProxy = 660281012821237D00C91AAA /* PBXContainerItemProxy */;
+		};
+		6602810E2821237D00C91AAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 660280F82821237D00C91AAA /* NAO-App (macOS) */;
+			targetProxy = 6602810D2821237D00C91AAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6602811A2821237D00C91AAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6602811B2821237D00C91AAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6602811D2821237D00C91AAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.NAO-App";
+				PRODUCT_NAME = "NAO-App";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6602811E2821237D00C91AAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.NAO-App";
+				PRODUCT_NAME = "NAO-App";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		660281202821237D00C91AAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.NAO-App";
+				PRODUCT_NAME = "NAO-App";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		660281212821237D00C91AAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.NAO-App";
+				PRODUCT_NAME = "NAO-App";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		660281232821237D00C91AAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NAO-App (iOS)";
+			};
+			name = Debug;
+		};
+		660281242821237D00C91AAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "NAO-App (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		660281262821237D00C91AAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "NAO-App (macOS)";
+			};
+			name = Debug;
+		};
+		660281272821237D00C91AAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "GammaRobotics.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "NAO-App (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		660280EA2821237A00C91AAA /* Build configuration list for PBXProject "NAO-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6602811A2821237D00C91AAA /* Debug */,
+				6602811B2821237D00C91AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6602811C2821237D00C91AAA /* Build configuration list for PBXNativeTarget "NAO-App (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6602811D2821237D00C91AAA /* Debug */,
+				6602811E2821237D00C91AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6602811F2821237D00C91AAA /* Build configuration list for PBXNativeTarget "NAO-App (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660281202821237D00C91AAA /* Debug */,
+				660281212821237D00C91AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660281222821237D00C91AAA /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660281232821237D00C91AAA /* Debug */,
+				660281242821237D00C91AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		660281252821237D00C91AAA /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				660281262821237D00C91AAA /* Debug */,
+				660281272821237D00C91AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 660280E72821237A00C91AAA /* Project object */;
+}
