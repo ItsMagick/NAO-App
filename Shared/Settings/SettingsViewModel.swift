@@ -47,12 +47,12 @@ import Combine
     
     
     internal func setLanguage(newLanguage : String) {
-        
         //diese zeile feuert fatal error, wenn man nicht mit dem now connected ist, da es diese URL nicht gibt.
         print(singleton.nao?.naoPort ?? "NoPyPort");
         print(singleton.nao?.pyPort ?? "NoPort");
         
         let url = URL(string : "http://\(singleton.nao?.getIp() ?? "No IP"):\(singleton.nao?.pyPort ?? "1234")")!
+        
         
         print(singleton.nao?.ip)
         var request = URLRequest(url: url)
@@ -61,16 +61,46 @@ import Combine
         let parameters: [String: Any] = [
             "messageId" : "0",
             "actionID" : "language",
-            "data" : [
-                "language" : "\(newLanguage)"
-            ],
+           
             "naoIP" : "127.0.0.1",
-            "naoPort" : "\(singleton.nao?.naoPort)"
+            "naoPort" : "9559"
         ]
         let json = try? JSONSerialization.data(withJSONObject: parameters)
+        //let json2 = JSONEncoder.encode
+        let isValid = JSONSerialization.isValidJSONObject(json);
+        print(isValid)
+        print(json)
         request.httpBody = json
-        
+        /*
+         "data" : [
+             "language" : "\(newLanguage)"
+         ],
+         
+         
+         let task = URLSession.shared.dataTask(with: request){ data, response, error in
+            guard
+                let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil
+            else{
+                print("error")
+                return
+            }
+            guard(200 ... 299)~=response.statusCode else{
+                return
+            }
+            
+            do{
+                let resposeObj = try JSONDecoder().decode(.self, from: data)
+                
+            }catch{
+                print(error)
+            }
+        }
+        */
         singleton.nao?.setLanguage(newLanguage: newLanguage)
+        print(newLanguage)
+        print(singleton.nao?.getLanguage() ?? "No Language Available")
     }
     
     
