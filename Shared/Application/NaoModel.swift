@@ -19,8 +19,8 @@ class NaoModel : ObservableObject {
     var ip: String = "-"
     var volume: Double = 0.0
     var language: String = ""
-    let pyPort = 8232
-    let naoPort = 9559
+    let pyPort = "8282"
+    let naoPort = "9559"
     
     
     

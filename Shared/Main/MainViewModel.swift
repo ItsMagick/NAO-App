@@ -98,7 +98,7 @@ class MainViewModel : ObservableObject {
         var daten:Int = 0
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
@@ -129,7 +129,7 @@ class MainViewModel : ObservableObject {
     func textToSpeech(text:String){
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
@@ -155,7 +155,7 @@ class MainViewModel : ObservableObject {
     func playAudio(){
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
@@ -173,7 +173,7 @@ class MainViewModel : ObservableObject {
     func stopAudio(){
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",

@@ -19,6 +19,7 @@ import Combine
 //        subscription = SettingsViewModel().modelNotifier().sink{
 //            self.didChange.toggle()
 //        }
+        
         Task {
             await fetchData()
         }
@@ -48,9 +49,14 @@ import Combine
     internal func setLanguage(newLanguage : String) {
         
         //diese zeile feuert fatal error, wenn man nicht mit dem now connected ist, da es diese URL nicht gibt.
-        let url = URL(string : "http://\(singleton.nao?.getIp()):\(singleton.nao?.pyPort)")!
+        print(singleton.nao?.naoPort ?? "NoPyPort");
+        print(singleton.nao?.pyPort ?? "NoPort");
+        
+        let url = URL(string : "http://\(singleton.nao?.getIp() ?? "No IP"):\(singleton.nao?.pyPort ?? "1234")")!
+        
+        print(singleton.nao?.ip)
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
@@ -58,7 +64,7 @@ import Combine
             "data" : [
                 "language" : "\(newLanguage)"
             ],
-            "naoIP" : "\(singleton.nao?.getIp())",
+            "naoIP" : "127.0.0.1",
             "naoPort" : "\(singleton.nao?.naoPort)"
         ]
         let json = try? JSONSerialization.data(withJSONObject: parameters)
@@ -77,7 +83,7 @@ import Combine
     internal func setVolume(newVolume: Double) {
         let url = URL(string : "http://\(getIp()):\(singleton.nao?.pyPort)")!
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
@@ -97,7 +103,7 @@ import Combine
     func setAsleep(){
         let url = URL(string : "http://\(getIp()):\(singleton.nao?.pyPort)")!
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
@@ -112,7 +118,7 @@ import Combine
     func setAwake(){
         let url = URL(string : "http://\(getIp()):\(singleton.nao?.pyPort)")!
         var request = URLRequest(url: url)
-        request.setValue("spplication/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
