@@ -19,6 +19,7 @@ class NaoModel : ObservableObject {
     var ip: String = "-"
     var volume: Double = 0.0
     var language: String = ""
+    
     let pyPort = "8283"
     let naoPort = "9559"
     
@@ -89,10 +90,11 @@ class NaoModel : ObservableObject {
     internal func setIp(newIp: String) {
         model.nao?.ip = newIp
     }
-    
+    ///gets name from model
     internal func getName() -> String {
         return model.nao?.name ?? ""
     }
+    
 }
 
 

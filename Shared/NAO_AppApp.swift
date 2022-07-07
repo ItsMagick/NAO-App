@@ -11,18 +11,11 @@ import SwiftUI
 struct NAO_AppApp: App {
     @ObservedObject var singleton = NaoModelSingleton.sharedInstance
     
-    internal var splashHasBeenShown: Bool = false
-    
     var body: some Scene {
         WindowGroup {
             
             SplashscreenView(settingsVm: SettingsViewModel.init())
-//            if(singleton.nao != nil && splashHasBeenShown == false){                SplashscreenView(settingsVm: SettingsViewModel.init())
-//            } else if (singleton.nao != nil) {
-//                MainView(settingsVm: SettingsViewModel.init())
-//            } else {
-//                ConnectNaoView()
-//            }
+
         }
     }
 }

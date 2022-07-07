@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BatteryView: View {
     
-    @State var vm : SettingsViewModel
+    @ObservedObject var vm : SettingsViewModel
     
     
     var body: some View {
@@ -17,11 +17,10 @@ struct BatteryView: View {
             checkBatteryIcon(batteryPercent: vm.getBatteryPercent())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            Text("\(vm.getBatteryPercent())")
-                .font(.largeTitle)
+            Text("\(vm.getBatteryPercent())%")
                 .foregroundColor(vm.getBatteryPercent() <= 30 ?
                     .red : .green)
-            Text("Battery")
+//            Text("Battery")
         }
         
     }

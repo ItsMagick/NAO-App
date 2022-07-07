@@ -16,7 +16,7 @@ struct MainView: View {
         TabView {
             MenuView(vm: mainVm)
                 .tabItem {
-                    Label("Menu", systemImage: "list.dash")
+                    Label("Functions", systemImage: "list.dash")
                 }
             SettingsView(vm: settingsVm)
                 .tabItem {

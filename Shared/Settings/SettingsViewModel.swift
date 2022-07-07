@@ -16,9 +16,9 @@ import Combine
     
     init() {
         
-//        subscription = SettingsViewModel().modelNotifier().sink{
-//            self.didChange.toggle()
-//        }
+        subscription = self.modelNotifier().sink {
+            self.didChange.toggle()
+        }
         
         Task {
             await fetchData()
@@ -48,13 +48,9 @@ import Combine
     
     internal func setLanguage(newLanguage : String) async {
         //diese zeile feuert fatal error, wenn man nicht mit dem now connected ist, da es diese URL nicht gibt.
-        print(singleton.nao?.naoPort ?? "NoPyPort");
-        print(singleton.nao?.pyPort ?? "NoPort");
-        
         let url = URL(string : "http://\(singleton.nao?.getIp() ?? "No IP"):\(singleton.nao?.pyPort ?? "1234")")!
         
         
-        //print(singleton.nao?.ip)
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 20
@@ -206,10 +202,5 @@ import Combine
     internal func getVolume() -> Double {
         return singleton.nao?.getVolume() ?? 0.0
     }
-    
-    
-    
-   
-    
     
 }

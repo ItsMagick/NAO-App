@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CPUView: View {
         
-    @State var vm : SettingsViewModel
+    @ObservedObject var vm : SettingsViewModel
     
     var body: some View {
         VStack() {
@@ -18,11 +18,11 @@ struct CPUView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            Text("\(vm.getCpuTemp())")
-                .font(.largeTitle)
+            Text("\(vm.getCpuTemp())°C")
+                
                 .foregroundColor(vm.getCpuTemp() >= 65 ?
                     .red : .green)
-            Text("CPU Temp")
+//            Text("CPU Temp")
         }
     }
 }

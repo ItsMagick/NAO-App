@@ -151,7 +151,7 @@ class MainViewModel : ObservableObject {
     
 
     
-    
+    //experimentell
     func playAudio(){
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
@@ -169,7 +169,8 @@ class MainViewModel : ObservableObject {
         let json = try? JSONSerialization.data(withJSONObject: parameters)
         request.httpBody = json
     }
-     
+    
+    //experimentell
     func stopAudio(){
         let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
         var request = URLRequest(url: url)
