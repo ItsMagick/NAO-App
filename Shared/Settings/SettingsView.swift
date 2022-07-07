@@ -81,7 +81,7 @@ struct SettingsView: View {
                                 do {
 
                                     //TODO: German dynamisch füllen
-                                    //await vm.setLanguage(newLanguage: languages[value])
+                                    vm.setLanguage2(newLanguage: languages[value])
                                 }catch {
                                     /// To define error behavour
                                 }

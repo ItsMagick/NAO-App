@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-@MainActor class SettingsViewModel : ObservableObject {
+@MainActor
+class SettingsViewModel : ObservableObject {
     var mainVM:MainViewModel = MainViewModel.init()
     @Published var didChange = true
     fileprivate let singleton = NaoModelSingleton.sharedInstance
@@ -25,6 +26,12 @@ import Combine
             await fetchData()
             print("after fetch")
             print(singleton.nao?.getBattery())
+        }
+    }
+    
+    internal func setLanguage2(newLanguage: String){
+        Task{
+            await setLanguage(newLanguage: newLanguage)
         }
     }
     
