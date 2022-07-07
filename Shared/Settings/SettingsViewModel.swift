@@ -128,7 +128,14 @@ class SettingsViewModel : ObservableObject {
     }
      */
     
+    internal func setVolume2(newVolume: Double){
+        Task{
+            await setVolume(newVolume: newVolume)
+            
+        }
+    }
     
+    /*
     internal func setVolume(newVolume: Double) async {
         let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
@@ -138,13 +145,15 @@ class SettingsViewModel : ObservableObject {
             "messageId" : "0",
             "actionId" : "setMaxVolume",
             "data" : [
-                "setMaxVolume": "\(newVolume)"
+                "setMaxVolume": newVolume
             ],
             "naoIp" : "127.0.0.1",
             "naoPort" : getNaoPort()
         ]
         let json = try? JSONSerialization.data(withJSONObject: parameters)
         request.httpBody = json
+        
+        
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             
@@ -167,7 +176,8 @@ class SettingsViewModel : ObservableObject {
         
         singleton.nao?.setVolume(newVolume: newVolume)
     }
-    
+    */
+     
     func setAsleep(){
         let url = URL(string : "http://\(getIp()):\(getPyPort)")!
         var request = URLRequest(url: url)

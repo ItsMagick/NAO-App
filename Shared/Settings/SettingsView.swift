@@ -61,8 +61,9 @@ struct SettingsView: View {
                 }).onChange(of: audioVolume){value in
                     if let volume = Double(audioVolumes[audioVolume]){
 
-                        //vm.setVolume(newVolume: volume/100)
-
+                        
+                        vm.setVolume2(newVolume: volume/100)
+                        print (volume/100)
                     }
                 }
                 
@@ -77,18 +78,14 @@ struct SettingsView: View {
                 }).pickerStyle(.inline)
                     .onChange(of: language){ value in
                     //vm.setLanguage(newLanguage: languages[language])
-                        Task.init() {
-                                do {
-
+                        
                                     //TODO: German dynamisch füllen
                                     vm.setLanguage2(newLanguage: languages[value])
-                                }catch {
-                                    /// To define error behavour
-                                }
+                               
                                 
-                            }
+                        }
                         
-                    }
+                    
                     
             }
             
