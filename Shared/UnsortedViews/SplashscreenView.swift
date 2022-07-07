@@ -11,14 +11,11 @@ struct SplashscreenView: View {
     
     @ObservedObject var settingsVm : SettingsViewModel
     @ObservedObject var singleton = NaoModelSingleton.sharedInstance
-
-
     
     @State var isActive:Bool = false
     
     var body: some View {
         VStack {
-            // 2.
             if self.isActive {
                 if(singleton.nao != nil) {
                     MainView(settingsVm: settingsVm)
@@ -30,18 +27,19 @@ struct SplashscreenView: View {
                 VStack() {
                     Image("SplashScreenTop")
                         .resizable()
-                        .padding()
+                        .padding(.leading)
+                    
                     Spacer()
                     Text("Gamma Studios")
                         .font(Font.largeTitle)
-                        
+                        .bold()
+                    
                     Spacer()
                     Image("SplashScreenBottom")
                         .resizable()
-                        .padding()
+                        .padding(.leading)
+                        .edgesIgnoringSafeArea(.all)
                 }
-                
-                
                 
                 
             }
@@ -57,8 +55,8 @@ struct SplashscreenView: View {
     
 }
 
-//struct SplashscreenView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SplashscreenView()
-//    }
-//}
+struct SplashscreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashscreenView(settingsVm: SettingsViewModel.init())
+    }
+}

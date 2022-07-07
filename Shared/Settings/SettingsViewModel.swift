@@ -16,9 +16,9 @@ import Combine
     
     init() {
         
-//        subscription = SettingsViewModel().modelNotifier().sink{
-//            self.didChange.toggle()
-//        }
+        subscription = self.modelNotifier().sink {
+            self.didChange.toggle()
+        }
         
         Task {
             print("before fetch")
@@ -68,6 +68,7 @@ import Combine
     
     
     internal func setLanguage(newLanguage : String) async {
+
         
         let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         
@@ -250,10 +251,5 @@ import Combine
     internal func getVolume() -> Double {
         return singleton.nao?.getVolume() ?? 0.0
     }
-    
-    
-    
-   
-    
     
 }

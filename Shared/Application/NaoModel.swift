@@ -89,10 +89,11 @@ class NaoModel : ObservableObject {
     internal func setIp(newIp: String) {
         model.nao?.ip = newIp
     }
-    
+    ///gets name from model
     internal func getName() -> String {
         return model.nao?.name ?? ""
     }
+    
 }
 
 

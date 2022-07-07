@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
     @State var isAwake : Bool = true
     @State var autonomousLife : Bool = true
     @State private var language = 0
@@ -26,17 +25,19 @@ struct SettingsView: View {
         NavigationView {
         VStack {
             NAOView(vm: vm)
-            HStack(spacing: 20) {
-                
-                BatteryView(vm: vm)
-                    .frame(width: 150, height: 150)
-                
-                
-                Divider()
-                
-                CPUView(vm: vm)
-                    .frame(width: 150, height: 150)
-            }
+                .padding()
+//            HStack(spacing: 20) {
+//                Spacer()
+//                BatteryView(vm: vm)
+//                    .frame(width: 50, height: 50)
+//                    
+//                Spacer()
+//                
+//                CPUView(vm: vm)
+//                    .frame(width: 50, height: 50)
+//                    
+//                Spacer()
+//            }
             
             
             List() {
@@ -54,13 +55,14 @@ struct SettingsView: View {
                  Audio Volume Picker
                  */
                 Picker("Audio Volume", selection: $audioVolume, content: {
-                    ForEach(audioVolumes.indices) {index in
+                    ForEach(audioVolumes.indices) { index in
                         Text(audioVolumes[index]).tag(index)
                     }
                 }).onChange(of: audioVolume){value in
                     if let volume = Double(audioVolumes[audioVolume]){
+
                         //vm.setVolume(newVolume: volume/100)
-                        
+
                     }
                 }
                 
@@ -73,10 +75,11 @@ struct SettingsView: View {
                         Text(languages[index]).tag(index)
                     }
                 }).pickerStyle(.inline)
-                    .onChange(of: language){value in
+                    .onChange(of: language){ value in
                     //vm.setLanguage(newLanguage: languages[language])
                         Task.init() {
                                 do {
+
                                     //TODO: German dynamisch füllen
                                     //await vm.setLanguage(newLanguage: languages[value])
                                 }catch {
@@ -86,21 +89,9 @@ struct SettingsView: View {
                             }
                         
                     }
-                    /*.task {
-                        await vm.setLanguage(newLanguage: value)
-                        
-                    }*/
+                    
             }
-            HStack() {
-                Button("Reboot") {
-                    //reboot code
-                }.buttonStyle(.borderedProminent)
-                
-                Button("Shutdown") {
-                    //shutdown code
-                }.buttonStyle(.borderedProminent)
-                
-            }.padding()
+            
             
         }.navigationTitle("Settings")
         
@@ -110,9 +101,9 @@ struct SettingsView: View {
     
 }
 
-//struct SettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsView()
-//            .previewInterfaceOrientation(.portraitUpsideDown)
-//    }
-//}
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView(vm: SettingsViewModel.init())
+            .previewInterfaceOrientation(.portraitUpsideDown)
+    }
+}
