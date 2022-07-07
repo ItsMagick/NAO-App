@@ -8,7 +8,7 @@
 import SwiftUI
 let ipValidation = try! NSRegularExpression(pattern: "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\(".")|$)){4}")
 struct ConnectNaoView: View {
-    @State var ipText: String = ""
+    @State var ipText: String = "192.168.171.148"
     @FocusState private var isFocused: Bool
     @State private var isDisabled: Bool = true
     

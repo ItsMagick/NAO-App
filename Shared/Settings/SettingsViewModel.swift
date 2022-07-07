@@ -55,6 +55,7 @@ import Combine
         
         
         //print(singleton.nao?.ip)
+        print("url: \(url)")
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 20
@@ -68,11 +69,12 @@ import Combine
             "naoIP" : "127.0.0.1",
             "naoPort" : "9559"
         ]
-        let json = try? JSONSerialization.data(withJSONObject: parameters)
+        
+        let json = try? JSONSerialization.data(withJSONObject: parameters, options:[])
+        print("json: \(json)")
         //let json2 = JSONEncoder.encode
-        let isValid = JSONSerialization.isValidJSONObject(json);
-        print(isValid)
-        print(json)
+
+
         request.httpBody = json
         
          
@@ -108,6 +110,7 @@ import Combine
             
             do {
                 print("decode data...")
+                print("response: \(response)")
                 let resposeObj = try JSONDecoder().decode(NaoJSONModel.self, from: data)
                 
             } catch {
