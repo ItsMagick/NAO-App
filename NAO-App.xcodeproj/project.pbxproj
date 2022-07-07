@@ -20,7 +20,7 @@
 		843D45532861BB220048DC5D /* CPUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45522861BB220048DC5D /* CPUView.swift */; };
 		843D45552861BE010048DC5D /* NAOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D45542861BE010048DC5D /* NAOView.swift */; };
 		843E96A2282A57A500919C19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A1282A57A500919C19 /* SettingsView.swift */; };
-		843E96A7282A5C4900919C19 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A6282A5C4900919C19 /* MenuView.swift */; };
+		843E96A7282A5C4900919C19 /* FunctionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E96A6282A5C4900919C19 /* FunctionsView.swift */; };
 		84584B28286F01A10045D1E9 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84584B27286F01A10045D1E9 /* MainViewModel.swift */; };
 		84635BD5286C94C2001E470A /* SplashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84635BD4286C94C2001E470A /* SplashscreenView.swift */; };
 		84714383286B04B300CAD4BA /* NaoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714382286B04B300CAD4BA /* NaoModel.swift */; };
@@ -56,7 +56,7 @@
 		843D45522861BB220048DC5D /* CPUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUView.swift; sourceTree = "<group>"; };
 		843D45542861BE010048DC5D /* NAOView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAOView.swift; sourceTree = "<group>"; };
 		843E96A1282A57A500919C19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		843E96A6282A5C4900919C19 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		843E96A6282A5C4900919C19 /* FunctionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsView.swift; sourceTree = "<group>"; };
 		84584B27286F01A10045D1E9 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		84635BD4286C94C2001E470A /* SplashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenView.swift; sourceTree = "<group>"; };
 		84714382286B04B300CAD4BA /* NaoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NaoModel.swift; path = Shared/Application/NaoModel.swift; sourceTree = SOURCE_ROOT; };
@@ -174,7 +174,7 @@
 		843E96A5282A5C3700919C19 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				843E96A6282A5C4900919C19 /* MenuView.swift */,
+				843E96A6282A5C4900919C19 /* FunctionsView.swift */,
 				84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */,
 			);
 			path = Menu;
@@ -336,7 +336,7 @@
 			files = (
 				843E96A2282A57A500919C19 /* SettingsView.swift in Sources */,
 				84635BD5286C94C2001E470A /* SplashscreenView.swift in Sources */,
-				843E96A7282A5C4900919C19 /* MenuView.swift in Sources */,
+				843E96A7282A5C4900919C19 /* FunctionsView.swift in Sources */,
 				843D45512861B70B0048DC5D /* BatteryView.swift in Sources */,
 				842F7B11286B0CB700F73999 /* ConnectNaoView.swift in Sources */,
 				843D45552861BE010048DC5D /* NAOView.swift in Sources */,

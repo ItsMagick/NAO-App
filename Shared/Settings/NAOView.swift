@@ -65,6 +65,9 @@ struct NAOView: View {
                                 )
                             }
                     
+            }.onAppear {
+                vm.getBatteryPercent()
+                vm.getCpuDegree2()
             }
             
             

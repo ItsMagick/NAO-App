@@ -45,8 +45,8 @@ struct SettingsView: View {
                     Text("Rest/Wake up")
                 }.onChange(of: isAwake){value in
                     if(isAwake == false){
-                        vm.setAsleep()
-                    }else{ vm.setAwake()}
+                        vm.setAsleep2()
+                    }else{ vm.setAwake2()}
                 }
                 Toggle(isOn: $autonomousLife) {
                     Text("Autonomous Life")
@@ -92,6 +92,9 @@ struct SettingsView: View {
             
         }.navigationTitle("Settings")
         
+        }
+        .onAppear {
+            vm.getBatteryPercent()
         }
     }
     

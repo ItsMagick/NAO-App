@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MenuView: View {
+struct FunctionsView: View {
     @State var vm: MainViewModel
     //dummy data
     @State var functions = ["Camera" , "Motion", "Speech Text", "Recorder", "Audio", "File Manager"]
@@ -16,15 +16,18 @@ struct MenuView: View {
     var body: some View {
        
         //MenuList
+        
         MenuNavigationView(vm: MainViewModel.init(), functions: functions)
         
         
+        
     }
+        
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(vm: MainViewModel.init())
+        FunctionsView(vm: MainViewModel.init())
     }
 }
 

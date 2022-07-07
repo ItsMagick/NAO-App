@@ -14,7 +14,7 @@ struct MainView: View {
     var body: some View {
         //TabView Switching between MenuView, ApplicationView, SettingsViewA
         TabView {
-            MenuView(vm: mainVm)
+            FunctionsView(vm: mainVm)
                 .tabItem {
                     Label("Functions", systemImage: "list.dash")
                 }

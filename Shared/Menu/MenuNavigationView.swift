@@ -19,10 +19,8 @@ struct MenuNavigationView: View {
                 TextField("Text to Speech", text: $text).onSubmit {
                     Task.init {
                             do {
-                                //TODO: German dynamisch füllen
                                 await vm.textToSpeech(text: text)
-                            } catch {
-                                /// To define error behavour
+                                text = ""
                             }
                             
                         }
