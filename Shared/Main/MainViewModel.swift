@@ -97,7 +97,7 @@ class MainViewModel : ObservableObject {
     }
     
     ///gets Battery from Nao
-    internal func getBattery() -> Int{
+    internal func getBattery() async -> Int {
         //get battery from nao
         var daten:Int = 0
         let url = URL(string : "http://\(getIp()):\(getPyPort())")!
@@ -121,9 +121,33 @@ class MainViewModel : ObservableObject {
             if let response = response as? [String: Any]{
                 
                 daten = response["data"] as! Int
+                print(daten)
+                
             }
         }
         task.resume()
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            //als debug-Ausgabe
+            let json_test = try JSONSerialization.jsonObject(with: data, options: [])
+            print(json_test)
+            
+            do {
+                print("decode data...")
+                print("response: \(response)")
+                let resposeObj = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                
+            } catch {
+                print("error decode data \(error)")
+            }
+            
+            
+            print(singleton.nao?.getLanguage() ?? "No Language Available")
+        } catch {
+            print("Invalid data")
+        }
         setBatteryPercent(newBatteryPercent: daten)
         return daten
     }

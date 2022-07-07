@@ -14,7 +14,7 @@ struct MenuNavigationView: View {
     var body: some View {
         NavigationView{
             List() {
-                Label("Battery info: \(vm.getBattery()) %", systemImage: "").listRowSeparator(.visible)
+                Label("Battery info: \(vm.getBatteryPercent()) %", systemImage: "").listRowSeparator(.visible)
                 Label("Text-to-speech", systemImage: "").listRowSeparator(.hidden)
                 TextField("Text to Speech", text: $text).onSubmit {
                     Task.init {

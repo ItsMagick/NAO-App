@@ -21,12 +21,16 @@ import Combine
 //        }
         
         Task {
+            print("before fetch")
             await fetchData()
+            print("after fetch")
+            print(singleton.nao?.getBattery())
         }
     }
     
     internal func fetchData() async {
-        setBatteryPercent(newBatteryPercent: mainVM.getBattery())
+        
+        await setBatteryPercent(newBatteryPercent: mainVM.getBattery())
         //setCpuTemp()
     }
     
@@ -117,7 +121,7 @@ import Combine
      */
     
     
-    internal func setVolume(newVolume: Double) {
+    internal func setVolume(newVolume: Double) async {
         let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -133,6 +137,25 @@ import Combine
         ]
         let json = try? JSONSerialization.data(withJSONObject: parameters)
         request.httpBody = json
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            //als debug-Ausgabe
+            let json_test = try JSONSerialization.jsonObject(with: data, options: [])
+            print(json_test)
+            
+            do {
+                print("decode data...")
+                print("response: \(response)")
+                _ = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                
+            } catch {
+                print("error decode data \(error)")
+            }
+       
+        } catch {
+            print("Invalid data")
+        }
         
         singleton.nao?.setVolume(newVolume: newVolume)
     }
@@ -169,7 +192,41 @@ import Combine
         let json = try? JSONSerialization.data(withJSONObject: parameters)
         request.httpBody = json
     }
-    
+    internal func getBatteryPercent() async{
+        let url = URL(string : "http://\(getIp()):\(getPyPort())")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "messageId" : "0",
+            "actionId" : "batteryInfo",
+            "naoIp" : "127.0.0.1",
+            "naoPort" : getNaoPort()
+        ]
+        let json = try? JSONSerialization.data(withJSONObject: parameters)
+        request.httpBody = json
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            //als debug-Ausgabe
+            let json_test = try JSONSerialization.jsonObject(with: data, options: [])
+            print(json_test)
+            
+            do {
+                print("decode data...")
+                print("response: \(response)")
+                _ = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                
+            } catch {
+                print("error decode data \(error)")
+            }
+       
+        } catch {
+            print("Invalid data")
+        }
+        
+       // singleton.nao?.setBattery(batteryPercent: <#T##Int#>))
+    }
     
     /*
             -------------------------------- Getters -------------------------------------
