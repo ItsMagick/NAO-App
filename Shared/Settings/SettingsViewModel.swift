@@ -46,7 +46,7 @@ import Combine
     }
     
     
-    internal func setLanguage(newLanguage : String) {
+    internal func setLanguage(newLanguage : String) async {
         //diese zeile feuert fatal error, wenn man nicht mit dem now connected ist, da es diese URL nicht gibt.
         print(singleton.nao?.naoPort ?? "NoPyPort");
         print(singleton.nao?.pyPort ?? "NoPort");
@@ -54,14 +54,17 @@ import Combine
         let url = URL(string : "http://\(singleton.nao?.getIp() ?? "No IP"):\(singleton.nao?.pyPort ?? "1234")")!
         
         
-        print(singleton.nao?.ip)
+        //print(singleton.nao?.ip)
         var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 20
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
             "actionID" : "language",
-           
+            "data" : [
+                "language" : "\(newLanguage)"
+            ],
             "naoIP" : "127.0.0.1",
             "naoPort" : "9559"
         ]
@@ -71,12 +74,10 @@ import Combine
         print(isValid)
         print(json)
         request.httpBody = json
-        /*
-         "data" : [
-             "language" : "\(newLanguage)"
-         ],
+        
          
          
+/*
          let task = URLSession.shared.dataTask(with: request){ data, response, error in
             guard
                 let data = data,
@@ -90,19 +91,36 @@ import Combine
                 return
             }
             
-            do{
-                let resposeObj = try JSONDecoder().decode(.self, from: data)
+ do{
+ let resposeObj = try JSONDecoder().decode(.self, from: data)
+ 
+ }catch{
+ print(error)
+ }
+ }
+ */
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            //als debug-Ausgabe
+            let json_test = try JSONSerialization.jsonObject(with: data, options: [])
+            print(json_test)
+            
+            do {
+                print("decode data...")
+                let resposeObj = try JSONDecoder().decode(NaoJSONModel.self, from: data)
                 
-            }catch{
-                print(error)
+            } catch {
+                print("error decode data \(error)")
             }
+            
+            singleton.nao?.setLanguage(newLanguage: newLanguage)
+            print(newLanguage)
+            print(singleton.nao?.getLanguage() ?? "No Language Available")
+        } catch {
+            print("Invalid data")
         }
-        */
-        singleton.nao?.setLanguage(newLanguage: newLanguage)
-        print(newLanguage)
-        print(singleton.nao?.getLanguage() ?? "No Language Available")
     }
-    
     
     
     internal func setIp(newIp: String) {

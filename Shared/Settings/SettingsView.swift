@@ -74,8 +74,22 @@ struct SettingsView: View {
                     }
                 }).pickerStyle(.inline)
                     .onChange(of: language){value in
-                    vm.setLanguage(newLanguage: languages[language])
-                }
+                    //vm.setLanguage(newLanguage: languages[language])
+                        Task.init {
+                                do {
+                                    //TODO: German dynamisch füllen
+                                    await vm.setLanguage(newLanguage: "German")
+                                } catch {
+                                    /// To define error behavour
+                                }
+                                
+                            }
+                        
+                    }
+                    /*.task {
+                        await vm.setLanguage(newLanguage: value)
+                        
+                    }*/
             }
             HStack() {
                 Button("Reboot") {

@@ -105,3 +105,15 @@ internal class NaoModelSingleton : ObservableObject {
 }
 
 
+
+
+struct NaoJSONModel : Codable {
+    var messageId : Int
+    var success : Bool
+    var data : NaoData
+    var message : String
+}
+
+struct NaoData : Codable {
+    
+}
