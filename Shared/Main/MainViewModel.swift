@@ -9,10 +9,6 @@ import Foundation
 import Combine
 
 class MainViewModel : ObservableObject {
-    let naoPort = 9559
-    let pyServerPort = 8283
-    
-    //let url = URL(string : "http://\(getIp()):\(port)")!
     
     fileprivate let singleton = NaoModelSingleton.sharedInstance
 
@@ -28,8 +24,16 @@ class MainViewModel : ObservableObject {
     
     
     /*
-        ####################Setter&Getter##########################
+        --------------------- Setter&Getter ---------------------------
      */
+    
+    internal func getPyPort() -> Int{
+        return singleton.nao?.pyPort ?? 0000
+    }
+    
+    internal func getNaoPort() -> Int{
+        return singleton.nao?.naoPort ?? 0000
+    }
     ///sends Ip to Model and sets it there
     internal func setIp(userInputString: String) {
         singleton.nao?.setIp(newIp: userInputString)
@@ -96,15 +100,15 @@ class MainViewModel : ObservableObject {
     internal func getBattery() -> Int{
         //get battery from nao
         var daten:Int = 0
-        let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
+        let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
-            "actionID" : "batteryInfo",
-            "naoIP" : "\(getIp())",
-            "naoPort" : "\(naoPort)"
+            "actionId" : "batteryInfo",
+            "naoIp" : "127.0.0.1",
+            "naoPort" : "\(getNaoPort())"
         ]
         let json = try? JSONSerialization.data(withJSONObject: parameters)
         request.httpBody = json
@@ -150,10 +154,8 @@ class MainViewModel : ObservableObject {
         print(singleton.nao?.naoPort ?? "NoPyPort");
         print(singleton.nao?.pyPort ?? "NoPort");
         
-        let url = URL(string : "http://192.168.171.148:8283")!
+        let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         
-        
-        //print(singleton.nao?.ip)
         print("url: \(url)")
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -166,40 +168,15 @@ class MainViewModel : ObservableObject {
                 "text" : "\(text)"
             ],
             "naoIp" : "127.0.0.1",
-            "naoPort" : 9559
+            "naoPort" : getNaoPort()
         ]
         
         let json = try? JSONSerialization.data(withJSONObject: parameters, options:[])
         print("json: \(json)")
-        //let json2 = JSONEncoder.encode
 
 
         request.httpBody = json
         
-         
-         
-/*
-         let task = URLSession.shared.dataTask(with: request){ data, response, error in
-            guard
-                let data = data,
-                let response = response as? HTTPURLResponse,
-                error == nil
-            else{
-                print("error")
-                return
-            }
-            guard(200 ... 299)~=response.statusCode else{
-                return
-            }
-            
- do{
- let resposeObj = try JSONDecoder().decode(.self, from: data)
- 
- }catch{
- print(error)
- }
- }
- */
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             
@@ -231,33 +208,33 @@ class MainViewModel : ObservableObject {
     
     
     func playAudio(){
-        let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
+        let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
-            "actionID" : "audioPlayer",
+            "actionId" : "audioPlayer",
             "data" : [
                 "path": "/home/nao/naoqui/hope.wav"
             ],
-            "naoIP" : "\(getIp())",
-            "naoPort" : "\(naoPort)"
+            "naoIp" : "127.0.0.1",
+            "naoPort" : "\(getNaoPort())"
         ]
         let json = try? JSONSerialization.data(withJSONObject: parameters)
         request.httpBody = json
     }
      
     func stopAudio(){
-        let url = URL(string : "http://\(getIp()):\(pyServerPort)")!
+        let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
-            "actionID" : "audioStop",
-            "naoIP" : "\(getIp())",
-            "naoPort" : "\(naoPort)"
+            "actionId" : "audioStop",
+            "naoIp" : "127.0.0.1",
+            "naoPort" : "\(getNaoPort())"
         ]
         let json = try? JSONSerialization.data(withJSONObject: parameters)
         request.httpBody = json
