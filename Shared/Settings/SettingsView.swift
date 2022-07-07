@@ -19,7 +19,6 @@ struct SettingsView: View {
     @ObservedObject var vm: SettingsViewModel
     
     
-    
     var body: some View {
         
         //NAO Übersicht (Battery, CPU temp)
