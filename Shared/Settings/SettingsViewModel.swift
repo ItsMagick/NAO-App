@@ -5,7 +5,7 @@
 //  Created by Jan Rubner on 28.06.22.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 @MainActor
@@ -61,31 +61,31 @@ class SettingsViewModel : ObservableObject {
             ----------------------- Network/API Layer getters/setter ---------------------
      */
     internal func getCpuTemp() -> Int {
-        NetworkLayer.init()
+        //network.get
         //get data from model
         return singleton.nao?.getCpu() ?? 0
     }
     
     internal func getBatteryPercent() -> Int {
-        NetworkLayer.init()
+        network.getBatteryFromNao()
         //get data from model
         return singleton.nao?.getBattery() ?? 0
     }
     
     internal func setAsleep() {
-        NetworkLayer().setAsleep()
+        network.setAsleep()
     }
     
     internal func setAwake() {
-        NetworkLayer().setAwake()
+        network.setAwake()
     }
     
     internal func setVolume(newVolume: Int) {
-        NetworkLayer().setVolume(newVolume: newVolume)
+        network.setVolume(newVolume: newVolume)
     }
     
     internal func setLanguage(newLanguage: String) {
-        NetworkLayer().setLanguage(newLanguage: newLanguage)
+        network.setLanguage(newLanguage: newLanguage)
     }
     
 }
