@@ -249,7 +249,7 @@ class SettingsViewModel : ObservableObject {
     internal func getBatteryPercent() async{
         let url = URL(string : "http://\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
@@ -272,9 +272,15 @@ class SettingsViewModel : ObservableObject {
             //this block now throws an error -> catch error decode data
             //"The given data was not valid JSON" -> "Unable to parse empty array"
             do {
+                //TODO: nur Test Ausgabe
+                let json_test = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json_test)
+                
                 print("decode battery data...")
                       
-                _ = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                let batteryObject : NaoJSONModel = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                print("BatteryInfo: \(batteryObject.data.batteryInfo)")
+                setBatteryPercent(newBatteryPercent: batteryObject.data.batteryInfo ?? 0)
                 
             } catch {
                 print("error decode battery data \(error)")

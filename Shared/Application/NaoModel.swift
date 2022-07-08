@@ -113,8 +113,13 @@ struct NaoJSONModel : Codable {
     var success : Bool
     var data : NaoData
     var message : String
-}
-
-struct NaoData : Codable {
     
 }
+struct NaoData : Codable {
+    var batteryInfo : Int?
+    //not sure if cpuTemp is really an Int!
+    var cpuTemp : Int?
+    var base64Jpeg : String?
+    
+}
+
