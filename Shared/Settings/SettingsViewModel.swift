@@ -115,13 +115,13 @@ class SettingsViewModel : ObservableObject {
             print("Invalid data")
         }
     }
-    internal func setVolume2(newVolume: Double){
+    internal func setVolume2(newVolume: Float){
         Task{
             await setVolume(newVolume: newVolume)
             
         }
     }
-    internal func setVolume(newVolume: Double) async {
+    internal func setVolume(newVolume: Float) async {
         let url = URL(string : "http:\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -356,7 +356,7 @@ class SettingsViewModel : ObservableObject {
     
     
     
-    internal func getVolume() -> Double {
+    internal func getVolume() -> Float {
         return singleton.nao?.getVolume() ?? 0.0
     }
     
