@@ -15,6 +15,7 @@ struct ConnectNaoView: View {
     var body: some View {
         
         VStack {
+            Text("Gib die IP Adresse des Nao ein")
             TextField("IP Adresse",
                       text: $ipText)
             .focused($isFocused)

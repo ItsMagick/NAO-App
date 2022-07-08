@@ -263,22 +263,25 @@ class SettingsViewModel : ObservableObject {
         ]
         print("batteryData JSON starting")
         let json = try? JSONSerialization.data(withJSONObject: parameters)
-        
+        print("currentBatteryJson:")
+        //request that is being sent! WORKING
         request.httpBody = json
+            
+        //block does not throw an error anymore!
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
             
-            //als debug-Ausgabe
-            let json_test = try JSONSerialization.jsonObject(with: data, options: [])
-            print(json_test)
+            let (data, _) = try await URLSession.shared.data(for: request)
             
+    
+            //this block now throws an error -> catch error decode data
+            //"The given data was not valid JSON" -> "Unable to parse empty array"
             do {
                 print("decode battery data...")
-                print("response: \(response)")
+                      
                 _ = try JSONDecoder().decode(NaoJSONModel.self, from: data)
                 
             } catch {
-                print("error decode data \(error)")
+                print("error decode battery data \(error)")
             }
        
         } catch {
@@ -309,19 +312,14 @@ class SettingsViewModel : ObservableObject {
         print("start CPU JSON")
         request.httpBody = json
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            //als debug-Ausgabe
-            let json_test = try JSONSerialization.jsonObject(with: data, options: [])
-            print(json_test)
+            let (data, _) = try await URLSession.shared.data(for: request)
             
             do {
-                print("decode data...")
-                print("response: \(response)")
+                print("decode CPU data...")
                 _ = try JSONDecoder().decode(NaoJSONModel.self, from: data)
                 
             } catch {
-                print("error decode data \(error)")
+                print("error decode CPU data \(error)")
             }
        
         } catch {
