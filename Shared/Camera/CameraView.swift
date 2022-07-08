@@ -8,16 +8,25 @@
 import SwiftUI
 
 struct CameraView: View {
+    @ObservedObject var vm: CameraViewModel
     @State var isViewDisplayed : Bool
     var body: some View {
+        /*
+        Image("myImage").scaledToFit().onAppear {
+            while (isViewDisplayed){
+                
+                // TODO: while view is displayed request images from nao, decode from base64 to image, display in camera view
+                vm.getImages()
+                
+                
+            }
+        }
+        
+         */
         Text("Fill in video from API Call!")
             .onAppear {
                 self.isViewDisplayed = true
-                while (isViewDisplayed){
-                    
-                    // TODO: while view is displayed request images from nao, decode from base64 to image, display in camera view
-                    
-                }
+                
                         
             }
             .onDisappear {
@@ -29,6 +38,6 @@ struct CameraView: View {
 
 struct CameraView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraView(isViewDisplayed: true)
+        CameraView(vm: CameraViewModel.init(), isViewDisplayed: true)
     }
 }

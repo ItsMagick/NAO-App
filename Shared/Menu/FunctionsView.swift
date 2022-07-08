@@ -19,7 +19,6 @@ struct FunctionsView: View {
         MenuNavigationView(vm: MainViewModel.init(), functions: functions)
         
         
-        
     }
         
 }

@@ -40,6 +40,10 @@ class NaoModel : ObservableObject {
         model.nao?.image = image
     }
     
+    internal func getImages() -> Image{
+        return model.nao?.image ?? Image("")
+    }
+    
     
     /*
         BATTERY

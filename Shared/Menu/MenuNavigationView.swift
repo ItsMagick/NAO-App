@@ -25,6 +25,7 @@ struct MenuNavigationView: View {
                             
                         }
                 }
+                CameraView(vm : CameraViewModel.init(), isViewDisplayed: true)
                 
             } .navigationTitle("Functions")
                 .listStyle(.insetGrouped)
