@@ -115,22 +115,22 @@ class SettingsViewModel : ObservableObject {
             print("Invalid data")
         }
     }
-    internal func setVolume2(newVolume: Float){
+    internal func setVolume2(newVolume: Int){
         Task{
             await setVolume(newVolume: newVolume)
             
         }
     }
-    internal func setVolume(newVolume: Float) async {
+    internal func setVolume(newVolume: Int) async {
         let url = URL(string : "http:\(getIp()):\(getPyPort())")!
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
             "messageId" : "0",
-            "actionId" : "setMaxVolume",
+            "actionId" : "setOutputVolume",
             "data" : [
-                "setMaxVolume": newVolume
+                "setOutputVolume": newVolume
             ],
             "naoIp" : "127.0.0.1",
             "naoPort" : getNaoPort()
@@ -233,10 +233,6 @@ class SettingsViewModel : ObservableObject {
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            
-            //als debug-Ausgabe
-            let json_test = try JSONSerialization.jsonObject(with: data, options: [])
-            print(json_test)
             
             do {
                 print("decode data...")
@@ -356,8 +352,8 @@ class SettingsViewModel : ObservableObject {
     
     
     
-    internal func getVolume() -> Float {
-        return singleton.nao?.getVolume() ?? 0.0
+    internal func getVolume() -> Int {
+        return singleton.nao?.getVolume() ?? 0
     }
     
 }

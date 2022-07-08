@@ -58,12 +58,12 @@ class MainViewModel : ObservableObject {
         Volume
      */
     ///sets Volume to Model
-    internal func setVolume(newVolume: Float) {
+    internal func setVolume(newVolume: Int) {
         singleton.nao?.setVolume(newVolume: newVolume)
     }
     ///gets Volume from Model
-    internal func getVolume() -> Float {
-        return singleton.nao?.getVolume() ?? 0.0
+    internal func getVolume() -> Int {
+        return singleton.nao?.getVolume() ?? 0
     }
     
     /*

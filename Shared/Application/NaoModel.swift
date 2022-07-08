@@ -17,7 +17,7 @@ class NaoModel : ObservableObject {
     var battery: Int = 0
     var cpu: Int = 0
     var ip: String = "-"
-    var volume: Float = 0.0
+    var volume: Int = 0
     var language: String = ""
     let pyPort = 8283
     let naoPort = 9559
@@ -58,12 +58,12 @@ class NaoModel : ObservableObject {
         VOLUME
      */
     ///sets Volume to model
-    internal func setVolume(newVolume : Float) {
+    internal func setVolume(newVolume : Int) {
         model.nao?.volume = newVolume
     }
     ///gets Volume from model
-    internal func getVolume() -> Float {
-        return model.nao?.volume ?? 0.0
+    internal func getVolume() -> Int {
+        return model.nao?.volume ?? 0
     }
 
     /*

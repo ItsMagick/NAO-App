@@ -59,11 +59,11 @@ struct SettingsView: View {
                         Text(audioVolumes[index]).tag(index)
                     }
                 }).onChange(of: audioVolume){value in
-                    if let volume = Float(audioVolumes[audioVolume]){
+                    if let volume = Int(audioVolumes[audioVolume]){
 
                         
-                        vm.setVolume2(newVolume: volume/100)
-                        print (volume/100)
+                        vm.setVolume2(newVolume: Int(volume))
+                        print (volume)
                     }
                 }
                 
