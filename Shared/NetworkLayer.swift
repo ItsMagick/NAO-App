@@ -358,7 +358,7 @@ internal class NetworkLayer : ObservableObject {
                 
                 #warning("TODO: Hier bist du stehen geblieben. jetzt noch display image und image buffer mit array")
                 
-                NaoModelSingleton.sharedInstance.nao?.setImage(image: image ?? Image(""))
+                NaoModelSingleton.sharedInstance.nao?.setImage(image: (image)!)
               
                 
             } catch {
@@ -378,14 +378,14 @@ internal class NetworkLayer : ObservableObject {
         
     }
     
-    func decodeBase64IntoImage(base64string: String) -> Image?{
+    func decodeBase64IntoImage(base64string: String) -> UIImage?{
         guard let stringData = Data(base64Encoded: base64string),
               let uiImage = UIImage(data: stringData) else {
                   print("Error: couldn't create UIImage")
                   return nil
               }
         /// Convert UIImage to SwiftUI Image
-        let swiftUIImage = Image(uiImage: uiImage)
-        return swiftUIImage
+        //let swiftUIImage = Image(uiImage: uiImage)
+        return uiImage
     }
 }

@@ -13,7 +13,7 @@ class NaoModel : ObservableObject {
     /*
      the information you get from the NAO-Server will be saved here
      */
-    var image: Image = Image("")
+    var image: UIImage = UIImage(contentsOfFile:"") as! UIImage
     var name: String = "NAO"
     var battery: Int = 0
     var cpu: Int = 0
@@ -36,12 +36,12 @@ class NaoModel : ObservableObject {
         IMAGE
      */
     ///sets image form Stream
-    internal func setImage(image:Image){
+    internal func setImage(image:UIImage){
         model.nao?.image = image
     }
     
-    internal func getImages() -> Image{
-        return model.nao?.image ?? Image("")
+    internal func getImages() -> UIImage{
+        return model.nao!.image ?? UIImage(contentsOfFile: "") as! UIImage
     }
     
     

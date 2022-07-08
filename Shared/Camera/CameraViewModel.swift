@@ -20,8 +20,8 @@ class CameraViewModel : ObservableObject{
         return singleton.objectWillChange
     }
     
-    func getImages() -> Image{
-        return singleton.nao?.getImages() ?? Image("")
+    func getImages() -> UIImage{
+        return singleton.nao?.getImages() ?? UIImage(contentsOfFile:"") as! UIImage
     }
     
     

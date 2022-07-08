@@ -11,8 +11,10 @@ struct CameraView: View {
     @ObservedObject var vm: CameraViewModel
     @State var isViewDisplayed : Bool
     var body: some View {
-        /*
-        Image("myImage").scaledToFit().onAppear {
+        
+        Image(uiImage: (vm.getImages()))
+            .scaledToFit()
+            .onAppear {
             while (isViewDisplayed){
                 
                 // TODO: while view is displayed request images from nao, decode from base64 to image, display in camera view
@@ -22,7 +24,7 @@ struct CameraView: View {
             }
         }
         
-         */
+         
         Text("Fill in video from API Call!")
             .onAppear {
                 self.isViewDisplayed = true
