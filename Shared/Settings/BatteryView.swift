@@ -13,14 +13,16 @@ struct BatteryView: View {
     
     
     var body: some View {
-        VStack() {
+        HStack() {
             checkBatteryIcon(batteryPercent: vm.getBatteryPercent())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            Text("\(vm.getBatteryPercent())%")
+            Text("\(vm.getBatteryPercent())")
                 .foregroundColor(vm.getBatteryPercent() <= 30 ?
                     .red : .green)
 //            Text("Battery")
+            
+            
         }
         
     }

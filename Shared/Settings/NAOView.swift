@@ -21,14 +21,18 @@ struct NAOView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.main.bounds.width/4, height: UIScreen.main.bounds.width/4, alignment: .leading)
             VStack(alignment: .leading) {
-                Text("Nao 3")
-                Text(vm.getIp())
                 HStack {
+                    Text("Nao3")
                     BatteryView(vm: vm)
                         .frame(width: 50, height: 45)
-                    CPUView(vm: vm)
-                        .frame(width: 50, height: 46.5)
                 }
+                
+                Text(vm.getIp())
+                
+                    
+//                    CPUView(vm: vm)
+//                        .frame(width: 50, height: 46.5)
+                
             }
             
             VStack(spacing: 15) {
@@ -66,8 +70,7 @@ struct NAOView: View {
                             }
                     
             }.onAppear {
-                vm.getBatteryPercent()
-                vm.getCpuDegree2()
+                NetworkLayer.init()
             }
             
             

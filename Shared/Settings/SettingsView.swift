@@ -25,28 +25,15 @@ struct SettingsView: View {
         NavigationView {
         VStack {
             NAOView(vm: vm)
-                .padding()
-//            HStack(spacing: 20) {
-//                Spacer()
-//                BatteryView(vm: vm)
-//                    .frame(width: 50, height: 50)
-//                    
-//                Spacer()
-//                
-//                CPUView(vm: vm)
-//                    .frame(width: 50, height: 50)
-//                    
-//                Spacer()
-//            }
-            
+                .padding()            
             
             List() {
                 Toggle(isOn: $isAwake) {
                     Text("Rest/Wake up")
                 }.onChange(of: isAwake){value in
                     if(isAwake == false){
-                        vm.setAsleep2()
-                    }else{ vm.setAwake2()}
+                        vm.setAsleep()
+                    }else{ vm.setAwake()}
                 }
                 Toggle(isOn: $autonomousLife) {
                     Text("Autonomous Life")
@@ -60,9 +47,7 @@ struct SettingsView: View {
                     }
                 }).onChange(of: audioVolume){value in
                     if let volume = Int(audioVolumes[audioVolume]){
-
-                        
-                        vm.setVolume2(newVolume: Int(volume))
+                        vm.setVolume(newVolume: Int(volume))
                         print (volume)
                     }
                 }
@@ -80,7 +65,7 @@ struct SettingsView: View {
                     //vm.setLanguage(newLanguage: languages[language])
                         
                                     //TODO: German dynamisch füllen
-                                    vm.setLanguage2(newLanguage: languages[value])
+                                    vm.setLanguage(newLanguage: languages[value])
                                
                                 
                         }

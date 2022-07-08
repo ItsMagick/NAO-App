@@ -94,6 +94,16 @@ class NaoModel : ObservableObject {
         return model.nao?.name ?? ""
     }
     
+    internal func getNaoPort() -> Int {
+        return model.nao?.naoPort ?? 0
+    }
+    
+    internal func getPyPort() -> Int {
+        return model.nao?.pyPort ?? 0
+    }
+    
+    
+    
 }
 
 
@@ -105,14 +115,11 @@ internal class NaoModelSingleton : ObservableObject {
     
 }
 
-
-
-
 struct NaoJSONModel : Codable {
-    var messageId : Int
-    var success : Bool
-    var data : NaoData
-    var message : String
+    var messageId : String?
+    var success : Bool?
+    var data : NaoData?
+    var message : String?
     
 }
 struct NaoData : Codable {
