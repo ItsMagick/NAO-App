@@ -10,6 +10,7 @@ import Combine
 
 class CameraViewModel : ObservableObject{
     var network = NetworkLayer()
+    
     fileprivate let singleton = NaoModelSingleton.sharedInstance
     init() {
         
@@ -20,8 +21,8 @@ class CameraViewModel : ObservableObject{
         return singleton.objectWillChange
     }
     
-    func getImages() -> UIImage{
-        return singleton.nao?.getImages() ?? UIImage(contentsOfFile:"") as! UIImage
+    func getImages() -> Image{
+        return singleton.nao?.getImages() ?? Image("")
     }
     
     

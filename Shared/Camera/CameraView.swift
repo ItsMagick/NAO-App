@@ -11,7 +11,8 @@ struct CameraView: View {
     @ObservedObject var vm: CameraViewModel
     @State var isViewDisplayed : Bool
     var body: some View {
-        
+        #warning("Do not uncomment this command")
+        /*
         Image(uiImage: (vm.getImages()))
             .scaledToFit()
             .onAppear {
@@ -23,6 +24,7 @@ struct CameraView: View {
                 
             }
         }
+         */
         
          
         Text("Fill in video from API Call!")
