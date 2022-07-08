@@ -61,7 +61,7 @@ internal class NetworkLayer : ObservableObject {
                 print("decode battery data...")
                       
                 let batteryObject : NaoJSONModel = try JSONDecoder().decode(NaoJSONModel.self, from: data)
-                print("BatteryInfo: \(batteryObject.data?.batteryInfo)")
+     
                 setBatteryPercent(newPercent: batteryObject.data?.batteryInfo ?? 0)
                 
             } catch {
@@ -79,6 +79,8 @@ internal class NetworkLayer : ObservableObject {
     /*
         CPU
      */
+    
+    /// Doesn't do anything becasue endpoint is unclear
     internal func getCpuDegree() async {
         guard let url = URL(string : "http://\(iP):\(pyPort)")
         else {
@@ -113,7 +115,6 @@ internal class NetworkLayer : ObservableObject {
         } catch {
             print("Invalid data at CPU JSON")
         }
-        #warning("TODO: decode JSON and setCpuTemp -> Int")
 //        setCpuTemp(newCpuTemt: <#T##Int#>)
     }
     internal func setcpuDegree(newDegree: Int) {

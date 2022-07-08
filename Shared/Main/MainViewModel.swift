@@ -137,7 +137,7 @@ class MainViewModel : ObservableObject {
             do {
                 print("decode data...")
                 print("response: \(response)")
-                let resposeObj = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                _ = try JSONDecoder().decode(NaoJSONModel.self, from: data)
                 
             } catch {
                 print("error decode data \(error)")
@@ -196,7 +196,6 @@ class MainViewModel : ObservableObject {
         ]
         
         let json = try? JSONSerialization.data(withJSONObject: parameters, options:[])
-        print("json: \(json)")
 
 
         request.httpBody = json
@@ -211,7 +210,7 @@ class MainViewModel : ObservableObject {
             do {
                 print("decode data...")
                 print("response: \(response)")
-                let resposeObj = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                let _ = try JSONDecoder().decode(NaoJSONModel.self, from: data)
                 
             } catch {
                 print("error decode data \(error)")
@@ -225,7 +224,7 @@ class MainViewModel : ObservableObject {
     }
     
     func move(){
-        #warning("movement funktionalität implementieren.")
+        #warning("TODO: movement funktionalität implementieren.")
     }
     
 

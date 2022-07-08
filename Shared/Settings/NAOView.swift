@@ -62,7 +62,6 @@ struct NAOView: View {
                                     message: Text("There is no awakening possible using only the phone"),
                                     primaryButton: .destructive(Text("Shutdown")) {
                                         print("Shutting down...")
-                                        #warning("implement shutdown")
                                         NaoModelSingleton.sharedInstance.nao = nil
                                     },
                                     secondaryButton: .cancel()
