@@ -5,14 +5,15 @@
 //  Created by Jan Rubner on 28.06.22.
 //
 
-import Foundation
-import Combine
 
+import Combine
+import SwiftUI
 
 class NaoModel : ObservableObject {
     /*
      the information you get from the NAO-Server will be saved here
      */
+    var image: Image = Image("")
     var name: String = "NAO"
     var battery: Int = 0
     var cpu: Int = 0
@@ -29,6 +30,16 @@ class NaoModel : ObservableObject {
     internal func modelNotifier() -> ObservableObjectPublisher {
         return model.objectWillChange
     }
+    
+    
+    /*
+        IMAGE
+     */
+    ///sets image form Stream
+    internal func setImage(image:Image){
+        model.nao?.image = image
+    }
+    
     
     /*
         BATTERY

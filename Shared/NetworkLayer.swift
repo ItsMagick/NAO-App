@@ -5,8 +5,7 @@
 //  Created by Jan Rubner on 08.07.22.
 //
 
-import Foundation
-import UIKit
+import SwiftUI
 
 internal class NetworkLayer : ObservableObject {
     
@@ -24,6 +23,12 @@ internal class NetworkLayer : ObservableObject {
     /*
         Battery
      */
+    
+    internal func getBatteryFromNao(){
+        Task{
+            await getBatteryFromNao()
+        }
+    }
     internal func getBatteryFromNao() async {
         
         guard let url = URL(string : "http://\(iP):\(pyPort)")
@@ -301,5 +306,85 @@ internal class NetworkLayer : ObservableObject {
         } catch {
             print("Invalid data")
         }
+    }
+    func getImages() async {
+        //get battery from nao
+
+        let url = URL(string : "http://\(iP):\(pyPort)")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "messageId" : "0",
+            "actionId" : "captureImage",
+            "data" : [
+                "resolutionId" : 2,
+                "imageQualityPercentage" : 50
+                
+            ],
+            "naoIp" : "127.0.0.1",
+            "naoPort" : "\(naoPort)"
+        ]
+        let json = try? JSONSerialization.data(withJSONObject: parameters)
+        request.httpBody = json
+        let task = URLSession.shared.dataTask(with: request){data, response, error in
+            guard let data = data, error == nil else{
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let response = try? JSONSerialization.jsonObject(with: data, options:[])
+            if let response = response as? [String: Any]{
+                
+                
+            }
+        }
+        task.resume()
+        
+        do {
+            
+            let (data, response) = try await URLSession.shared.data(for: request)
+            //als debug-Ausgabe
+            //let json_test = try JSONSerialization.jsonObject(with: data, options: [])
+            //print(json_test)
+            
+            do {
+                print("decode data...")
+                print("response: \(response)")
+                let resposeObj = try JSONDecoder().decode(NaoJSONModel.self, from: data)
+                print(resposeObj.data!.base64Jpeg ?? 0)
+                
+                let image = decodeBase64IntoImage(base64string: resposeObj.data?.base64Jpeg ?? "")
+                
+                #warning("TODO: Hier bist du stehen geblieben. jetzt noch display image und image buffer mit array")
+                
+                NaoModelSingleton.sharedInstance.nao?.setImage(image: image ?? Image(""))
+              
+                
+            } catch {
+                print("error decode data \(error)")
+            }
+            
+            
+        } catch {
+            print("Invalid data base 64 data")
+        }
+    
+    }
+    func getImages() {
+        Task{
+            await getImages()
+        }
+        
+    }
+    
+    func decodeBase64IntoImage(base64string: String) -> Image?{
+        guard let stringData = Data(base64Encoded: base64string),
+              let uiImage = UIImage(data: stringData) else {
+                  print("Error: couldn't create UIImage")
+                  return nil
+              }
+        /// Convert UIImage to SwiftUI Image
+        let swiftUIImage = Image(uiImage: uiImage)
+        return swiftUIImage
     }
 }

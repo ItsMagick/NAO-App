@@ -5,7 +5,7 @@
 //  Created by Jan Rubner on 01.07.22.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class MainViewModel : ObservableObject {
