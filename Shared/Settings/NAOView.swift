@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct NAOView: View {
-    @ObservedObject var vm: SettingsViewModel
+    
     @State private var isShutdownPresented = false
     @State private var isDisconnectPreseted = false
+    
+    @ObservedObject var vm : SettingsViewModel
     
     var body: some View {
         
@@ -27,14 +29,14 @@ struct NAOView: View {
                         .frame(width: 50, height: 45)
                 }
                 
-                Text(vm.getIp())
+                Text(vm.nao?.ip ?? "")
                 
                     
 //                    CPUView(vm: vm)
 //                        .frame(width: 50, height: 46.5)
                 
             }
-            
+            //Button to disconnect -> Popup if you are sure about it
             VStack(spacing: 15) {
                 Button("Disconnect") {
                     isDisconnectPreseted = true
@@ -51,7 +53,7 @@ struct NAOView: View {
                                     secondaryButton: .cancel()
                                 )
                             }
-                
+                //Button to Shutdown -> Popup if you are sure about it
                 Button(" Shutdown ") {
                     isShutdownPresented = true
                 } .buttonStyle(.borderedProminent)
@@ -68,18 +70,20 @@ struct NAOView: View {
                                 )
                             }
                     
-            }.onAppear {
-                NetworkLayer.init()
             }
             
             
+        }
+        .onAppear {
+            print("Refresh")
+            vm.getBatteryPercent()
         }
     }
     
     
     struct NAOView_Previews: PreviewProvider {
         static var previews: some View {
-            NAOView(vm: SettingsViewModel.init())
+            NAOView(vm: SettingsViewModel())
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 internal class NetworkLayer : ObservableObject {
     
+    //Hardcoded, need to be fixed in future Updates!!! get from Model when needed
     fileprivate var iP = "192.168.171.148"
     fileprivate var pyPort = 8283
     fileprivate var naoPort = 9559
@@ -129,7 +130,11 @@ internal class NetworkLayer : ObservableObject {
         }
     }
     internal func setAwake() async {
-        let url = URL(string : "http://\(iP):\(pyPort)")!
+         guard let url = URL(string : "http://\(iP):\(pyPort)")
+        else {
+             return
+         }
+        
         
         print("url: \(url)")
         var request = URLRequest(url: url)
@@ -308,11 +313,15 @@ internal class NetworkLayer : ObservableObject {
             print("Invalid data")
         }
     }
-    func getImages() async {
+    
+    
+    func getImage() async -> Image {
         //get battery from nao
-
+        
         let url = URL(string : "http://\(iP):\(pyPort)")!
         var request = URLRequest(url: url)
+        var finishedImage: Image = Image("")
+        
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
@@ -354,12 +363,14 @@ internal class NetworkLayer : ObservableObject {
                 let resposeObj = try JSONDecoder().decode(NaoJSONModel.self, from: data)
                 print(resposeObj.data!.base64Jpeg ?? 0)
                 
-                let image = decodeBase64IntoImage(base64string: resposeObj.data?.base64Jpeg ?? "")
+                let decodedImage = decodeBase64IntoImage(base64string: resposeObj.data?.base64Jpeg ?? "")
                 
-                #warning("TODO: Hier bist du stehen geblieben. jetzt noch display image und image buffer mit array")
+                //set decodedImage from Nao to returned Image
+                finishedImage = decodedImage
                 
-                NaoModelSingleton.sharedInstance.nao?.setImage(image: image ?? Image(""))
-              
+                //set finishedImage to NaoModel variable
+                NaoModelSingleton.sharedInstance.nao?.setImage(image: decodedImage)
+                
                 
             } catch {
                 print("error decode data \(error)")
@@ -369,23 +380,18 @@ internal class NetworkLayer : ObservableObject {
         } catch {
             print("Invalid data base 64 data")
         }
-    
-    }
-    func getImages() {
-        Task{
-            await getImages()
-        }
-        
+        return finishedImage
     }
     
-    func decodeBase64IntoImage(base64string: String) -> Image?{
+    
+    func decodeBase64IntoImage(base64string: String) -> Image{
         guard let stringData = Data(base64Encoded: base64string),
               let uiImage = UIImage(data: stringData) else {
                   print("Error: couldn't create UIImage")
-                  return nil
+                  return Image("")
               }
         /// Convert UIImage to SwiftUI Image
         let swiftUIImage = Image(uiImage: uiImage)
-        return swiftUIImage ?? Image("")
+        return swiftUIImage
     }
 }

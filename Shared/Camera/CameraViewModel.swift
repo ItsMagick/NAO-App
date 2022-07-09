@@ -9,9 +9,11 @@ import SwiftUI
 import Combine
 
 class CameraViewModel : ObservableObject{
+    
     var network = NetworkLayer()
     
     fileprivate let singleton = NaoModelSingleton.sharedInstance
+    
     init() {
         
     
@@ -24,6 +26,8 @@ class CameraViewModel : ObservableObject{
     func getImages() -> Image{
         return singleton.nao?.getImages() ?? Image("")
     }
+    
+    
     
     
 }

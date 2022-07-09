@@ -15,11 +15,12 @@ class NaoModel : ObservableObject {
      */
     var image: Image = Image("")
     var name: String = "NAO"
-    var battery: Int = 0
-    var cpu: Int = 0
-    var ip: String = "-"
-    var volume: Int = 0
-    var language: String = ""
+    @Published var battery: Int = 0
+    @Published var cpu: Int = 0
+    @Published var ip: String = "-"
+    @Published var volume: Int = 0
+    @Published var language: String = ""
+    @Published var languageSelected: Int = 0
     let pyPort = 8283
     let naoPort = 9559
     

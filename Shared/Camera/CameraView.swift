@@ -7,10 +7,32 @@
 
 import SwiftUI
 
+//currently not working since the endpoint returns base64 String, needs to be parsed and castet to Image
 struct CameraView: View {
     @ObservedObject var vm: CameraViewModel
+    
     @State var isViewDisplayed : Bool
+    
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    
     var body: some View {
+        vm.getImages()
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         #warning("Do not uncomment this command")
         /*
         Image(uiImage: (vm.getImages()))
@@ -26,16 +48,18 @@ struct CameraView: View {
         }
          */
         
-         
-        Text("Fill in video from API Call!")
-            .onAppear {
-                self.isViewDisplayed = true
-                
-                        
-            }
-            .onDisappear {
-                self.isViewDisplayed = false
-            }
+        
+        //Could be inherited but not possible at the moment
+        
+//        Text("Fill in video from API Call!")
+//            .onAppear {
+//                self.isViewDisplayed = true
+//
+//
+//            }
+//            .onDisappear {
+//                self.isViewDisplayed = false
+//            }
         
     }
 }

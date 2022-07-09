@@ -18,7 +18,7 @@ struct SplashscreenView: View {
         VStack {
             if self.isActive {
                 if(singleton.nao != nil) {
-                    MainView(settingsVm: settingsVm)
+                    MainView()
                 } else {
                     ConnectNaoView()
                 }

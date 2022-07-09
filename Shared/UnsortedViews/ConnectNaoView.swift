@@ -33,8 +33,10 @@ struct ConnectNaoView: View {
                 Button("Fertig") {
                     let nao = NaoModel()
                     nao.name = "Nao"
-                    nao.ip = ipText
+//                    nao.ip = ipText
                     NaoModelSingleton.sharedInstance.nao = nao
+                    nao.setIp(newIp: ipText)
+                    
                 }.buttonStyle(.borderedProminent)
                     .disabled(isDisabled)
                 

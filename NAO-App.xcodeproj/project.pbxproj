@@ -107,9 +107,10 @@
 		660280EB2821237A00C91AAA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8460C7852879D7C000FB0E50 /* Extensions */,
+				843E969F282A578700919C19 /* Settings */,
 				843D454D2861B3C70048DC5D /* Camera */,
 				843E96A5282A5C3700919C19 /* Menu */,
-				843E969F282A578700919C19 /* Settings */,
 				8496E80C28252EA700D7C4FA /* Main */,
 				8496E80128252B0300D7C4FA /* UnsortedViews */,
 				8496E80228252B0A00D7C4FA /* Models */,
@@ -184,6 +185,13 @@
 				84D6AE6A282E516D0094EDC2 /* MenuNavigationView.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		8460C7852879D7C000FB0E50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8496E80128252B0300D7C4FA /* UnsortedViews */ = {

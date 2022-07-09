@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CPUView: View {
-        
-    @ObservedObject var vm : SettingsViewModel
+    //currently not working since there is no endpoint
+    @State var cpu : Int
     
     var body: some View {
         VStack() {
@@ -18,9 +18,9 @@ struct CPUView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            Text("\(vm.getCpuTemp())°C")
+            Text("\(cpu)°C")
                 
-                .foregroundColor(vm.getCpuTemp() >= 65 ?
+                .foregroundColor(cpu >= 65 ?
                     .red : .green)
 //            Text("CPU Temp")
         }
@@ -29,6 +29,6 @@ struct CPUView: View {
 
 struct CPUView_Previews: PreviewProvider {
     static var previews: some View {
-        CPUView(vm: SettingsViewModel.init())
+        CPUView(cpu: 35)
     }
 }

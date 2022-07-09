@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var isAwake : Bool = true
+    
     @State var autonomousLife : Bool = true
-    @State private var language = 0
+    @State var isAwake : Bool = true
+    @State private var language = 1
     @State private var languages = ["German", "English"]
-    @State private var audioVolume = 1
     @State private var audioVolumes = ["0","25", "50","75", "100"]
     
+    @State private var audioVolume = 1
     
-    @ObservedObject var vm: SettingsViewModel
+    
+    @ObservedObject var vm : SettingsViewModel
+    
     
     
     var body: some View {
@@ -25,7 +28,7 @@ struct SettingsView: View {
         NavigationView {
         VStack {
             NAOView(vm: vm)
-                .padding()            
+                .padding()
             
             List() {
                 Toggle(isOn: $isAwake) {
@@ -63,23 +66,22 @@ struct SettingsView: View {
                 }).pickerStyle(.inline)
                     .onChange(of: language){ value in
                     //vm.setLanguage(newLanguage: languages[language])
-                        
-                                    //TODO: German dynamisch füllen
-                                    vm.setLanguage(newLanguage: languages[value])
+                            vm.setLanguage(newLanguage: languages[value])
                                
                                 
                         }
-                        
-                    
-                    
+            }.refreshable {
+                vm.getBatteryPercent()
             }
             
             
-        }.navigationTitle("Settings")
+            
+            
+        }.navigationTitle("Overview")
         
-        }
-        .onAppear {
+        } .onAppear {
             vm.getBatteryPercent()
+            print(vm.nao?.battery)
         }
     }
     
@@ -88,7 +90,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(vm: SettingsViewModel.init())
+        SettingsView(vm: SettingsViewModel())
             .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

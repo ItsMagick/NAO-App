@@ -11,14 +11,14 @@ struct BatteryView: View {
     
     @ObservedObject var vm : SettingsViewModel
     
-    
+    //battery not getting refreshed. Needs to be fixed in future updates
     var body: some View {
         HStack() {
-            checkBatteryIcon(batteryPercent: vm.getBatteryPercent())
+            checkBatteryIcon(batteryPercent: vm.nao?.battery ?? 0)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            Text("\(vm.getBatteryPercent())")
-                .foregroundColor(vm.getBatteryPercent() <= 30 ?
+            Text("\(vm.nao?.battery ?? 0)")
+                .foregroundColor(vm.nao?.battery ?? 0 <= 30 ?
                     .red : .green)
 //            Text("Battery")
             
@@ -27,7 +27,7 @@ struct BatteryView: View {
         
     }
     
-    
+    ///checks the batteryPercent and returns Image that is displayed in View
     func checkBatteryIcon(batteryPercent: Int) -> Image {
         switch batteryPercent {
         case 0...40:
@@ -46,6 +46,6 @@ struct BatteryView: View {
 
 struct BatteryView_Previews: PreviewProvider {
     static var previews: some View {
-        BatteryView(vm: SettingsViewModel.init())
+        BatteryView(vm: SettingsViewModel())
     }
 }

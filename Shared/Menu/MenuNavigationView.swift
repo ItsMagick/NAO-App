@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MenuNavigationView: View {
-    @State var vm : MainViewModel
-    @State var text:String = ""
-    var functions : [String]
+    @ObservedObject var vm : MainViewModel
+    @State var text : String = ""
+    
     var body: some View {
         NavigationView{
             List() {
@@ -25,7 +25,9 @@ struct MenuNavigationView: View {
                             
                         }
                 }
+                /*
                 CameraView(vm : CameraViewModel.init(), isViewDisplayed: true)
+                */
                 
             } .navigationTitle("Functions")
                 .listStyle(.insetGrouped)
@@ -39,6 +41,6 @@ struct MenuNavigationView_Previews: PreviewProvider {
     static var functions = ["Motion", "Speech Text", "Audio"]
     
     static var previews: some View {
-        MenuNavigationView(vm: MainViewModel.init(), functions: functions)
+        MenuNavigationView(vm: MainViewModel.init())
     }
 }
