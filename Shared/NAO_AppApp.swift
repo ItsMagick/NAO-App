@@ -14,7 +14,7 @@ struct NAO_AppApp: App {
     var body: some Scene {
         WindowGroup {
             
-            SplashscreenView(settingsVm: SettingsViewModel.init())
+            SplashscreenView()
 
         }
     }

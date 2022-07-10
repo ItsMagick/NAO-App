@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashscreenView: View {
     
-    @ObservedObject var settingsVm : SettingsViewModel
+    
     @ObservedObject var singleton = NaoModelSingleton.sharedInstance
     
     @State var isActive:Bool = false
@@ -57,6 +57,6 @@ struct SplashscreenView: View {
 
 struct SplashscreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashscreenView(settingsVm: SettingsViewModel.init())
+        SplashscreenView()
     }
 }
