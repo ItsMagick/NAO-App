@@ -107,6 +107,7 @@
 		660280EB2821237A00C91AAA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				849C7D4E28784D3C00AFF658 /* NetworkLayer.swift */,
 				8460C7852879D7C000FB0E50 /* Extensions */,
 				843E969F282A578700919C19 /* Settings */,
 				843D454D2861B3C70048DC5D /* Camera */,
@@ -116,7 +117,6 @@
 				8496E80228252B0A00D7C4FA /* Models */,
 				660280EC2821237A00C91AAA /* NAO_AppApp.swift */,
 				660280EE2821237D00C91AAA /* Assets.xcassets */,
-				849C7D4E28784D3C00AFF658 /* NetworkLayer.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";

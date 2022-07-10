@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MenuNavigationView: View {
+    
     @ObservedObject var vm : MainViewModel
+    
     @State var text : String = ""
     
     var body: some View {

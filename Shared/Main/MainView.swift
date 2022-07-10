@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var mainVm = MainViewModel.init()
-    @StateObject var settingsVM = SettingsViewModel.init()
     
     
     var body: some View {
         //TabView Switching between MenuView, ApplicationView, SettingsViewA
         TabView {
-            SettingsView(vm: settingsVM)
+            SettingsView()
                 .tabItem {
                     Label("Overview", systemImage: "gearshape")
                 }
-            FunctionsView(vm: mainVm)
+            FunctionsView()
                 .tabItem {
                     Label("Functions", systemImage: "list.dash")
                 }

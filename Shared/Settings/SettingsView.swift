@@ -18,8 +18,8 @@ struct SettingsView: View {
     @State private var audioVolume = 1
     
     
-    @ObservedObject var vm : SettingsViewModel
-    
+    @StateObject var vm = SettingsViewModel()
+
     
     
     var body: some View {

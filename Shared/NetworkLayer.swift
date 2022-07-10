@@ -10,6 +10,13 @@ import SwiftUI
 internal class NetworkLayer : ObservableObject {
     
     //Hardcoded, need to be fixed in future Updates!!! get from Model when needed
+    
+    //possible fix! -> Init viewmodels AFTER the ip was set by the user.(done, experimental)
+    //move init out of MainView -> SettingsView (done, experimental)
+    
+    //this NetworkLayer MAY need viewModels to use "getIP" -> gets iP from NaoModelSingleton
+    //could be inherited in future updates, no time for now
+    
     fileprivate var iP = "192.168.171.148"
     fileprivate var pyPort = 8283
     fileprivate var naoPort = 9559

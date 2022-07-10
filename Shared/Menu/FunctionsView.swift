@@ -9,11 +9,11 @@ import SwiftUI
 
 struct FunctionsView: View {
     
-    @State var vm: MainViewModel
-    
+    @StateObject var vm = MainViewModel()
+
     var body: some View {
         
-        MenuNavigationView(vm: MainViewModel.init())
+        MenuNavigationView(vm: vm)
         
     }
         
